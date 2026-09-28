@@ -1,0 +1,11 @@
+${AnsiStyle.NORMAL}${AnsiColor.CYAN}
+ ____              _    ____            _
+|  _ \ __ _ _ __  | | _|  _ \ ___  ___ | | __
+| |_) / _` | '_ \ | |/ / |_) / _ \/ _ \| |/ /
+|  _ < (_| | | | ||   <|  __/  __/  __/|   <
+|_| \_\__,_|_| |_||_|\_\_|   \___|\___||_|\_\
+${AnsiStyle.NORMAL}${AnsiColor.DEFAULT}
+
+${AnsiStyle.NORMAL}${AnsiColor.BRIGHT_WHITE}:: ${AnsiColor.CYAN}RankPeek Backend${AnsiColor.BRIGHT_WHITE} ::${AnsiStyle.NORMAL}${AnsiColor.DEFAULT}
+${AnsiStyle.NORMAL}${AnsiColor.BRIGHT_BLACK}:: Powered by ${AnsiColor.GREEN}Spring Boot 3.5${AnsiColor.BRIGHT_BLACK} & ${AnsiColor.GREEN}JDK 21${AnsiColor.BRIGHT_BLACK} ::${AnsiStyle.NORMAL}${AnsiColor.DEFAULT}
+${AnsiStyle.NORMAL}${AnsiColor.DEFAULT}

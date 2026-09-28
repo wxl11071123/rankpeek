@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' ws://127.0.0.1:8080 http://127.0.0.1:8080 http://127.0.0.1:18080 https://api.rankpeek.cn https://127.0.0.1:* wss://127.0.0.1:*; img-src 'self' data: https: http://127.0.0.1:8080;"
+    />
+    <title>RankPeek - 英雄联盟对局侦察工具</title>
+    <script>
+      ;(() => {
+        const theme = localStorage.getItem('rankpeek-theme') || 'dark'
+        document.documentElement.setAttribute('data-theme', theme)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

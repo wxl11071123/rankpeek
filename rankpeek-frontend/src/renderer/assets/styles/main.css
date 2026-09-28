@@ -1,0 +1,503 @@
+/* ========================================
+   RankPeek Design System
+   Inspired by Apple Design Language
+   ======================================== */
+
+/* Dark Theme (Default) */
+:root,
+[data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #1d1d1f;
+  --bg-tertiary: #272729;
+  --bg-hover: #2a2a2d;
+  --bg-active: #333336;
+  --bg-elevated: #28282a;
+
+  --text-primary: #f5f5f7;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-tertiary: rgba(255, 255, 255, 0.48);
+  --text-inverse: #000000;
+
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-light: rgba(255, 255, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  --accent-color: #2997ff;
+  --accent-hover: #5eb5ff;
+  --accent-active: #0071e3;
+  --accent-rgb: 41, 151, 255;
+
+  --color-nav-icon: #d8b978;
+  --color-nav-icon-hover: #8bd7e8;
+  --color-nav-icon-active: #102a3d;
+
+  --gold-color: #d4a72c;
+  --gold-hover: #e8c04a;
+
+  --success-color: #30d158;
+  --success-bg: rgba(48, 209, 88, 0.15);
+  --warning-color: #ff9f0a;
+  --warning-bg: rgba(255, 159, 10, 0.15);
+  --error-color: #ff453a;
+  --error-bg: rgba(255, 69, 58, 0.15);
+  --info-color: #2997ff;
+  --info-bg: rgba(41, 151, 255, 0.15);
+
+  --card-bg: #1d1d1f;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: rgba(0, 0, 0, 0.5) 3px 5px 30px 0px;
+
+  --input-bg: #1c1c1e;
+  --input-border: #333336;
+  --input-focus-border: #2997ff;
+
+  --scrollbar-bg: #1d1d1f;
+  --scrollbar-thumb: #333336;
+  --scrollbar-thumb-hover: #48484a;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: rgba(0, 0, 0, 0.5) 3px 5px 30px 0px;
+  --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  --nav-bg: rgba(0, 0, 0, 0.88);
+  --overlay: rgba(60, 60, 67, 0.64);
+
+  --z-dropdown: 100;
+  --z-modal: 200;
+  --z-tooltip: 300;
+  --z-toast: 400;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary: #f5f5f7;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #fafafc;
+  --bg-hover: #ededf2;
+  --bg-active: #e5e5ea;
+  --bg-elevated: #ffffff;
+
+  --text-primary: #1d1d1f;
+  --text-secondary: rgba(0, 0, 0, 0.8);
+  --text-tertiary: rgba(0, 0, 0, 0.48);
+  --text-inverse: #ffffff;
+
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-light: rgba(0, 0, 0, 0.15);
+  --border-subtle: rgba(0, 0, 0, 0.06);
+
+  --accent-color: #0071e3;
+  --accent-hover: #2997ff;
+  --accent-active: #0066cc;
+  --accent-rgb: 0, 113, 227;
+
+  --color-nav-icon: #315f7f;
+  --color-nav-icon-hover: #9a6b1f;
+  --color-nav-icon-active: #092238;
+
+  --gold-color: #a68520;
+  --gold-hover: #8a6d1a;
+
+  --success-color: #28a745;
+  --success-bg: rgba(40, 167, 69, 0.1);
+  --warning-color: #d68910;
+  --warning-bg: rgba(214, 137, 16, 0.1);
+  --error-color: #c0392b;
+  --error-bg: rgba(192, 57, 43, 0.1);
+  --info-color: #0071e3;
+  --info-bg: rgba(0, 113, 227, 0.1);
+
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  --input-bg: #ffffff;
+  --input-border: #d2d2d7;
+  --input-focus-border: #0071e3;
+
+  --scrollbar-bg: #f5f5f7;
+  --scrollbar-thumb: #c7c7cc;
+  --scrollbar-thumb-hover: #aeaeb2;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --overlay: rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   Universal Variables
+   ======================================== */
+
+:root {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 980px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-text: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  --font-sans: var(--font-text);
+}
+
+/* ========================================
+   Reset
+   ======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.224px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* ========================================
+   悬浮窗（#/overlay）
+   ========================================
+   悬浮窗是贴在游戏画面上的透明贴片：窗口本体、body、外壳容器都不能有底色，
+   否则整块窗口会变成一条挡住游戏画面的黑条（只留三块小面板可见）。 */
+
+html.overlay-window,
+html.overlay-window body,
+html.overlay-window .app-container,
+html.overlay-window .main-content,
+html.overlay-window .app-content {
+  background: transparent;
+}
+
+/* ========================================
+   Scrollbar
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+
+::selection {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+/* ========================================
+   Links
+   ======================================== */
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+button {
+  font-family: var(--font-text);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ========================================
+   Inputs
+   ======================================== */
+
+input,
+textarea,
+select {
+  font-family: var(--font-text);
+  font-size: 14px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  letter-spacing: -0.224px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.25);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* ========================================
+   Images
+   ======================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================================
+   Augment Rarity Icon Frames
+   ======================================== */
+
+.augment-rarity-silver {
+  --augment-rarity-border: rgba(198, 211, 226, 0.78);
+  --augment-rarity-bg: linear-gradient(135deg, rgba(74, 83, 96, 0.74), rgba(31, 38, 49, 0.9));
+  --augment-rarity-inner: rgba(236, 242, 248, 0.16);
+}
+
+.augment-rarity-gold {
+  --augment-rarity-border: rgba(220, 174, 82, 0.86);
+  --augment-rarity-bg: linear-gradient(135deg, rgba(96, 70, 30, 0.76), rgba(47, 33, 18, 0.92));
+  --augment-rarity-inner: rgba(244, 202, 112, 0.16);
+}
+
+.augment-rarity-prismatic {
+  --augment-rarity-border: rgba(218, 157, 255, 0.84);
+  --augment-rarity-bg: linear-gradient(135deg, rgba(91, 54, 126, 0.76), rgba(38, 24, 64, 0.92) 55%, rgba(103, 48, 84, 0.72));
+  --augment-rarity-inner: rgba(255, 183, 233, 0.16);
+}
+
+.augment-rarity-bronze {
+  --augment-rarity-border: rgba(187, 124, 70, 0.82);
+  --augment-rarity-bg: linear-gradient(135deg, rgba(83, 50, 28, 0.76), rgba(43, 28, 20, 0.92));
+  --augment-rarity-inner: rgba(230, 155, 92, 0.14);
+}
+
+/* ========================================
+   Lists
+   ======================================== */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ========================================
+   Focus
+   ======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ========================================
+   Utility - Text Color
+   ======================================== */
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-success { color: var(--success-color); }
+.text-warning { color: var(--warning-color); }
+.text-error { color: var(--error-color); }
+.text-accent { color: var(--accent-color); }
+.text-gold { color: var(--gold-color); }
+
+/* ========================================
+   Utility - Background
+   ======================================== */
+
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }
+.bg-accent { background-color: var(--accent-color); }
+
+/* ========================================
+   Utility - Border Radius
+   ======================================== */
+
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* ========================================
+   Utility - Shadow
+   ======================================== */
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+/* ========================================
+   Utility - Flex
+   ======================================== */
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-1 { flex: 1; }
+
+/* ========================================
+   Utility - Gap
+   ======================================== */
+
+.gap-xs { gap: var(--spacing-xs); }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+.gap-xl { gap: var(--spacing-xl); }
+
+/* ========================================
+   Utility - Padding
+   ======================================== */
+
+.p-xs { padding: var(--spacing-xs); }
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+.p-xl { padding: var(--spacing-xl); }
+
+/* ========================================
+   Utility - Margin
+   ======================================== */
+
+.m-xs { margin: var(--spacing-xs); }
+.m-sm { margin: var(--spacing-sm); }
+.m-md { margin: var(--spacing-md); }
+.m-lg { margin: var(--spacing-lg); }
+.m-xl { margin: var(--spacing-xl); }
+
+/* ========================================
+   Utility - Typography
+   ======================================== */
+
+.text-xs { font-size: 12px; }
+.text-sm { font-size: 14px; }
+.text-base { font-size: 16px; }
+.text-lg { font-size: 18px; }
+.text-xl { font-size: 20px; }
+.text-2xl { font-size: 24px; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+/* ========================================
+   Utility - Display
+   ======================================== */
+
+.hidden { display: none; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline-flex { display: inline-flex; }
+
+/* ========================================
+   Utility - Transition
+   ======================================== */
+
+.transition { transition: all var(--transition-normal); }
+.transition-fast { transition: all var(--transition-fast); }
+.transition-slow { transition: all var(--transition-slow); }

@@ -1,0 +1,133 @@
+{
+  "name": "rankpeek-frontend",
+  "productName": "RankPeek",
+  "version": "1.1.1",
+  "description": "RankPeek desktop scout for League of Legends",
+  "author": "wxl11071123",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build:renderer": "vite build --config vite.config.mts",
+    "build:main": "vite build --config vite.config.main.mts",
+    "build:preload": "vite build --config vite.config.preload.mts",
+    "build": "npm run build:main && npm run build:preload && npm run build:renderer",
+    "postinstall": "electron-builder install-app-deps",
+    "build:electron": "npm run build && electron-builder",
+    "preview": "vite preview",
+    "test": "node --test \"src/renderer/**/*.test.ts\" \"src/shared/**/*.test.ts\"",
+    "test:main": "node --test src/main/*.test.ts",
+    "test:db": "node scripts/devtools/run-db-tests.mjs",
+    "ocr:selftest": "node scripts/devtools/ocr-selftest.mjs",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx --fix",
+    "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx",
+    "check:sfc": "node scripts/devtools/check-sfc.mjs",
+    "check:secrets": "node scripts/devtools/check-secrets.mjs",
+    "electron:rebuild": "electron-builder install-app-deps",
+    "electron:dev": "npm run build:main && npm run build:preload && concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron:cdp": "node scripts/devtools/electron-cdp.mjs",
+    "cdp": "node scripts/devtools/cdp.mjs",
+    "electron:build": "npm run build && npm run check:secrets && electron-builder --win"
+  },
+  "dependencies": {
+    "@stomp/stompjs": "^7.0.0",
+    "axios": "^1.6.2",
+    "better-sqlite3": "^11.9.1",
+    "compare-versions": "^6.1.1",
+    "koffi": "^3.0.2",
+    "onnxruntime-web": "^1.30.0",
+    "paddleocr": "^1.2.0",
+    "pinia": "^2.1.7",
+    "sockjs-client": "^1.6.1",
+    "vue": "^3.3.11",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^20.10.4",
+    "@types/sockjs-client": "^1.5.4",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vue/tsconfig": "^0.4.0",
+    "concurrently": "^8.2.2",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "eslint": "^8.57.1",
+    "eslint-plugin-vue": "^9.33.0",
+    "sharp": "^0.35.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vue-eslint-parser": "^9.4.3",
+    "vue-tsc": "^2.0.0",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "io.rankpeek.app",
+    "productName": "RankPeek",
+    "directories": {
+      "output": "release"
+    },
+    "publish": {
+      "provider": "generic",
+      "url": "https://api.rankpeek.cn/download/"
+    },
+    "files": [
+      "dist/**/*",
+      "!dist/**/*.map",
+      "!**/*.map",
+      "!node_modules/**/*.map",
+      "!dist/main/ocr-models/**",
+      "!dist/preload/ocr-models/**",
+      "!dist/renderer/ocr-models/**",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "public",
+        "to": "public",
+        "filter": [
+          "**/*",
+          "!game-assets/**"
+        ]
+      },
+      {
+        "from": "../rankpeek-backend/target/rankpeek-native.exe",
+        "to": "backend/rankpeek-backend.exe"
+      }
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "**/*.node",
+      "**/koffi/**/*",
+      "**/onnxruntime-web/**",
+      "**/paddleocr/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": false,
+      "installerIcon": "public/icon.ico",
+      "uninstallerIcon": "public/icon.ico"
+    },
+    "compression": "normal"
+  }
+}

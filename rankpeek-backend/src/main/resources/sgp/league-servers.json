@@ -1,0 +1,182 @@
+{
+  "servers": [
+    {
+      "platformId": "NA1",
+      "aliases": ["NA"],
+      "sgpServerId": "NA1",
+      "matchHistoryBaseUrl": "https://usw2-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://na-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "BR1",
+      "aliases": ["BR"],
+      "sgpServerId": "BR1",
+      "matchHistoryBaseUrl": "https://br-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://br-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "LA1",
+      "aliases": ["LAN"],
+      "sgpServerId": "LA1",
+      "matchHistoryBaseUrl": "https://la1-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://la1-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "LA2",
+      "aliases": ["LAS"],
+      "sgpServerId": "LA2",
+      "matchHistoryBaseUrl": "https://la2-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://la2-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "OC1",
+      "aliases": ["OCE", "OC"],
+      "sgpServerId": "OC1",
+      "matchHistoryBaseUrl": "https://oc1-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://oc1-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "EUW1",
+      "aliases": ["EUW"],
+      "sgpServerId": "EUW1",
+      "matchHistoryBaseUrl": "https://euw1-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://euw1-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "EUN1",
+      "aliases": ["EUNE"],
+      "sgpServerId": "EUN1",
+      "matchHistoryBaseUrl": "https://eun1-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://eun1-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "TR1",
+      "aliases": ["TR"],
+      "sgpServerId": "TR1",
+      "matchHistoryBaseUrl": "https://tr1-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://tr1-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "RU",
+      "aliases": ["RU1"],
+      "sgpServerId": "RU",
+      "matchHistoryBaseUrl": "https://ru-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://ru-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "KR",
+      "aliases": ["KR1"],
+      "sgpServerId": "KR",
+      "matchHistoryBaseUrl": "https://kr-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://kr-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "JP1",
+      "aliases": ["JP"],
+      "sgpServerId": "JP1",
+      "matchHistoryBaseUrl": "https://jp1-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://jp1-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "SG2",
+      "aliases": ["SG"],
+      "sgpServerId": "SG2",
+      "matchHistoryBaseUrl": "https://sg2-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://sg2-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "TW2",
+      "aliases": ["TW"],
+      "sgpServerId": "TW2",
+      "matchHistoryBaseUrl": "https://tw2-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://tw2-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "VN2",
+      "aliases": ["VN"],
+      "sgpServerId": "VN2",
+      "matchHistoryBaseUrl": "https://vn2-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://vn2-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "TH2",
+      "aliases": ["TH"],
+      "sgpServerId": "TH2",
+      "matchHistoryBaseUrl": "https://th2-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://th2-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "PH2",
+      "aliases": ["PH"],
+      "sgpServerId": "PH2",
+      "matchHistoryBaseUrl": "https://ph2-red.pp.sgp.pvp.net",
+      "commonBaseUrl": "https://ph2-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "HN1",
+      "aliases": ["TENCENT_HN1"],
+      "sgpServerId": "HN1",
+      "matchHistoryBaseUrl": "https://hn1-k8s-sgp.lol.qq.com:21019",
+      "commonBaseUrl": "https://hn1-k8s-sgp.lol.qq.com:21019"
+    },
+    {
+      "platformId": "HN10",
+      "aliases": ["TENCENT_HN10"],
+      "sgpServerId": "HN10",
+      "matchHistoryBaseUrl": "https://hn10-k8s-sgp.lol.qq.com:21019",
+      "commonBaseUrl": "https://hn10-k8s-sgp.lol.qq.com:21019"
+    },
+    {
+      "platformId": "TJ100",
+      "aliases": ["TENCENT_TJ100"],
+      "sgpServerId": "TJ100",
+      "matchHistoryBaseUrl": "https://tj100-sgp.lol.qq.com:21019",
+      "commonBaseUrl": "https://tj100-sgp.lol.qq.com:21019"
+    },
+    {
+      "platformId": "TJ101",
+      "aliases": ["TENCENT_TJ101"],
+      "sgpServerId": "TJ101",
+      "matchHistoryBaseUrl": "https://tj101-sgp.lol.qq.com:21019",
+      "commonBaseUrl": "https://tj101-sgp.lol.qq.com:21019"
+    },
+    {
+      "platformId": "NJ100",
+      "aliases": ["TENCENT_NJ100"],
+      "sgpServerId": "NJ100",
+      "matchHistoryBaseUrl": "https://nj100-sgp.lol.qq.com:21019",
+      "commonBaseUrl": "https://nj100-sgp.lol.qq.com:21019"
+    },
+    {
+      "platformId": "GZ100",
+      "aliases": ["TENCENT_GZ100"],
+      "sgpServerId": "GZ100",
+      "matchHistoryBaseUrl": "https://gz100-sgp.lol.qq.com:21019",
+      "commonBaseUrl": "https://gz100-sgp.lol.qq.com:21019"
+    },
+    {
+      "platformId": "CQ100",
+      "aliases": ["TENCENT_CQ100"],
+      "sgpServerId": "CQ100",
+      "matchHistoryBaseUrl": "https://cq100-sgp.lol.qq.com:21019",
+      "commonBaseUrl": "https://cq100-sgp.lol.qq.com:21019"
+    },
+    {
+      "platformId": "BGP2",
+      "aliases": ["TENCENT_BGP2"],
+      "sgpServerId": "BGP2",
+      "matchHistoryBaseUrl": "https://bgp2-k8s-sgp.lol.qq.com:21019",
+      "commonBaseUrl": "https://bgp2-k8s-sgp.lol.qq.com:21019"
+    },
+    {
+      "platformId": "PBE1",
+      "aliases": ["PBE"],
+      "sgpServerId": "PBE1",
+      "commonBaseUrl": "https://pbe-red.lol.sgp.pvp.net"
+    },
+    {
+      "platformId": "CN",
+      "aliases": ["TENCENT"]
+    }
+  ]
+}

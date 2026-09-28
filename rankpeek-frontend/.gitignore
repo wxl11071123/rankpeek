@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+release/
+release-*/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# OCR 自动留档（识别到强化时的整屏截图，只在本机排查用）
+ocr-captures/
+# 悬浮窗设置（userData 写不进去时的兜底位置）
+hextech-overlay.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+.local-debug/
+
+# TypeScript
+*.tsbuildinfo

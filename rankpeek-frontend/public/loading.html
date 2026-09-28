@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="icon.ico" />
+    <title>RankPeek Loading</title>
+    <style>
+      :root {
+        --black: #000000;
+        --deep-black: #050505;
+        --silver: #f2f2f2;
+        --silver-muted: rgba(242, 242, 242, 0.8);
+        --champagne: #d4af37;
+        --champagne-soft: rgba(212, 175, 55, 0.34);
+        --ease-rack-focus: cubic-bezier(0.16, 1, 0.3, 1);
+        --ease-snap: cubic-bezier(0.22, 1, 0.36, 1);
+        --ease-exit: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      body {
+        position: relative;
+        display: grid;
+        place-items: center;
+        background: #000000;
+        color: var(--silver);
+        opacity: 1;
+        -webkit-app-region: drag;
+        font-family:
+          Inter,
+          "SF Pro Display",
+          "Segoe UI",
+          "Microsoft YaHei",
+          sans-serif;
+        transition: opacity 0.5s ease;
+      }
+
+      .ambient-glow {
+        position: fixed;
+        top: 44%;
+        left: 50%;
+        z-index: 0;
+        width: 520px;
+        height: 520px;
+        border-radius: 999px;
+        pointer-events: none;
+        opacity: 0.52;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(212, 175, 55, 0.72) 0%,
+          rgba(212, 175, 55, 0.34) 30%,
+          rgba(212, 175, 55, 0.12) 58%,
+          transparent 78%
+        );
+        filter: blur(210px);
+        transform: translate3d(-50%, -50%, 0) scale(1);
+        animation: ambientMorph 7s ease-in-out infinite alternate;
+        will-change: opacity, transform, filter;
+      }
+
+      .focus-glass {
+        position: fixed;
+        top: 44%;
+        left: 50%;
+        z-index: 1;
+        width: 278px;
+        height: 278px;
+        border: 1px solid rgba(242, 242, 242, 0.026);
+        border-radius: 999px;
+        pointer-events: none;
+        opacity: 0;
+        background:
+          radial-gradient(circle at 50% 42%, rgba(242, 242, 242, 0.02), transparent 58%),
+          rgba(255, 255, 255, 0.008);
+        backdrop-filter: blur(18px) saturate(120%);
+        -webkit-backdrop-filter: blur(18px) saturate(120%);
+        transform: translate3d(-50%, -50%, 0) scale(1.03);
+        animation: lensResolve 1s var(--ease-rack-focus) 0.04s forwards;
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s var(--ease-snap),
+          filter 0.6s ease;
+      }
+
+      .splash-content {
+        position: relative;
+        z-index: 2;
+        width: 260px;
+        min-height: 246px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        text-align: center;
+        opacity: 0;
+        filter: blur(24px);
+        transform: scale(1.05);
+        animation: rackFocusIn 1s var(--ease-rack-focus) forwards;
+        will-change: opacity, filter, transform;
+      }
+
+      .splash-logo {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      .splash-wordmark {
+        color: var(--silver);
+        font-size: 30px;
+        font-weight: 650;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        text-shadow: 0 0 28px rgba(242, 242, 242, 0.16);
+      }
+
+      body.is-loaded .splash-content {
+        animation: focusSnap 0.3s ease-out forwards;
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(0.98);
+      }
+
+      body.is-loaded .splash-logo {
+        filter: drop-shadow(0 0 18px rgba(242, 242, 242, 0.18));
+      }
+
+      body.is-loaded .splash-wordmark {
+        color: #ffffff;
+        text-shadow:
+          0 0 18px rgba(242, 242, 242, 0.2),
+          0 0 32px rgba(212, 175, 55, 0.08);
+      }
+
+      body.is-loaded .focus-glass {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) scale(0.98);
+        transition:
+          opacity 0.3s ease-out,
+          transform 0.3s ease-out;
+      }
+
+      body.is-loaded .ambient-glow {
+        animation: auraBurst 0.6s ease-out forwards;
+      }
+
+      body.is-loaded.fade-out {
+        opacity: 0;
+      }
+
+      body.is-missing .ambient-glow {
+        animation: none;
+        opacity: 0;
+        transition: opacity 0.8s var(--ease-exit);
+      }
+
+      body.is-missing .focus-glass {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) scale(0.94);
+        transition:
+          opacity 0.8s var(--ease-exit),
+          transform 0.8s var(--ease-exit);
+      }
+
+      body.is-missing .splash-content {
+        animation: focusOut 0.8s var(--ease-exit) forwards;
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(0.95);
+      }
+
+      @keyframes rackFocusIn {
+        0% {
+          opacity: 0;
+          filter: blur(24px);
+          transform: scale(1.05);
+        }
+
+        78% {
+          opacity: 1;
+          filter: blur(1.4px);
+          transform: scale(1.002);
+        }
+
+        100% {
+          opacity: 0.8;
+          filter: blur(1px);
+          transform: scale(1);
+        }
+      }
+
+      @keyframes lensResolve {
+        0% {
+          opacity: 0;
+          filter: blur(18px);
+          transform: translate3d(-50%, -50%, 0) scale(1.06);
+        }
+
+        100% {
+          opacity: 0.22;
+          filter: blur(0);
+          transform: translate3d(-50%, -50%, 0) scale(1);
+        }
+      }
+
+      @keyframes ambientMorph {
+        0% {
+          opacity: 0.3;
+          transform: translate3d(calc(-50% - 10px), calc(-50% + 6px), 0) scale(0.96, 1.04);
+        }
+
+        45% {
+          opacity: 0.56;
+          transform: translate3d(calc(-50% + 8px), calc(-50% - 9px), 0) scale(1.08, 0.94);
+        }
+
+        100% {
+          opacity: 0.38;
+          transform: translate3d(calc(-50% + 13px), calc(-50% + 8px), 0) scale(1.02, 1.08);
+        }
+      }
+
+      @keyframes focusSnap {
+        0% {
+          opacity: 0.8;
+          filter: blur(1px);
+          transform: scale(1);
+        }
+
+        100% {
+          opacity: 1;
+          filter: blur(0);
+          transform: scale(0.98);
+        }
+      }
+
+      @keyframes auraBurst {
+        0% {
+          opacity: 0.56;
+          filter: blur(220px);
+          transform: translate3d(-50%, -50%, 0) scale(1);
+        }
+
+        100% {
+          opacity: 0;
+          filter: blur(260px);
+          transform: translate3d(-50%, -50%, 0) scale(2);
+        }
+      }
+
+      @keyframes focusOut {
+        0% {
+          opacity: 0.8;
+          filter: blur(1px);
+          transform: scale(1);
+        }
+
+        100% {
+          opacity: 0;
+          filter: blur(10px);
+          transform: scale(0.95);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ambient-glow,
+        .focus-glass,
+        .splash-content {
+          animation-duration: 1ms;
+          animation-iteration-count: 1;
+        }
+
+        body.is-loaded .ambient-glow,
+        body.is-loaded .splash-content,
+        body.is-missing .splash-content {
+          animation-duration: 1ms;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ambient-glow" aria-hidden="true"></div>
+    <div class="focus-glass" aria-hidden="true"></div>
+
+    <main class="splash-content" aria-label="RankPeek">
+      <img class="splash-logo" src="branding/rankpeek-eye-white.png" alt="" />
+      <div class="splash-wordmark">RankPeek</div>
+    </main>
+
+    <script>
+      let exiting = false;
+
+      window.finishWithLCU = () => {
+        if (exiting) {
+          return;
+        }
+
+        exiting = true;
+        document.body.classList.add('is-loaded');
+
+        setTimeout(() => {
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            document.body.style.display = 'none';
+          }, 500);
+        }, 1100);
+      };
+
+      window.finishWithoutLCU = () => {
+        if (exiting) {
+          return;
+        }
+
+        exiting = true;
+        document.body.classList.add('is-missing');
+
+        setTimeout(() => {
+          document.body.style.display = 'none';
+        }, 900);
+      };
+
+      window.smoothExit = window.finishWithLCU;
+      window.quickExit = window.finishWithoutLCU;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,569 @@
+[
+    {
+        "name":  "com.github.benmanes.caffeine.cache.SSMWW",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "com.github.benmanes.caffeine.cache.SSMSW",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "com.github.benmanes.caffeine.cache.PSWMW",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "com.github.benmanes.caffeine.cache.PSWMS",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.service.AssetService$Champion",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.service.AssetService$Item",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.service.AssetService$Spell",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.service.AssetService$ChampionOption",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameSession",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameSession$GameData",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameSession$Queue",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameSession$PlayerChampionSelection",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameSession$OnePlayer",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.ChampionSelectSession",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.ChampionSelectSession$Timer",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.ChampionSelectSession$Action",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.ChampionSelectSession$Player",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.Lobby",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.Lobby$GameConfig",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.Lobby$Member",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.Summoner",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.Rank",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.Rank$QueueMap",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.Rank$QueueInfo",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.MatchHistory",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.MatchHistory$Participant",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.MatchHistory$Stats",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.MatchHistory$ParticipantIdentity",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.MatchHistory$Player",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.UserTag",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.RecentData",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.RankTag",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.FriendAndDispute",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.OneGamePlayer",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.OneGamePlayerSummoner",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameState",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail$ParticipantIdentity",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail$Player",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail$GameParticipant",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail$Stats",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail$Timeline",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail$RawTeamSummary",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail$RawTeamObjectives",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail$RawObjective",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GameDetail$TeamBan",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.SessionData",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.SessionSummoner",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.PreGroupMarker",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.WinRate",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.AuthInfo",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.ApiResponse",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.GamePhase",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.AssetDetails",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.TagConfig",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.UserStoreSnapshot",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.UserStoreStatus",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.model.AramBalanceData",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.sgp.SgpServerConfig",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.sgp.SgpServerEntry",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.config.AppConfig",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.config.AppConfig$Settings",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    },
+    {
+        "name":  "io.rankpeek.config.AppConfig$AiSettings",
+        "allDeclaredConstructors":  true,
+        "allPublicConstructors":  true,
+        "allDeclaredMethods":  true,
+        "allPublicMethods":  true,
+        "allDeclaredFields":  true,
+        "allPublicFields":  true
+    }
+]

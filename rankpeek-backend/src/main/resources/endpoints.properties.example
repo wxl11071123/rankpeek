@@ -1,0 +1,7 @@
+# 自建服务端地址。复制成 endpoints.properties 后填真实值。
+# endpoints.properties 已被 .gitignore 忽略，不会进仓库 —— 开源仓库里不能出现服务器地址。
+# 拿不到这个文件时，海斗的自建数据 / 数据包 / 上传会整块关闭，其余功能照常可用。
+hextech.ingest-url=https://your-ingest-host/api/v1/upload/batch
+hextech.policy-url=https://your-ingest-host/hextech/upload-policy.json
+hextech.data-base-url=https://your-data-host/hextech
+hextech.aramgg.bundle-base-url=https://your-data-host/hextech/aramgg

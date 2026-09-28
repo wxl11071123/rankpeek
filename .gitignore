@@ -1,0 +1,187 @@
+# ==========================================
+# 全局通用忽略 (OS, IDE, Logs)
+# ==========================================
+
+# --- 操作系统文件 ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- IDE 配置文件 ---
+# opencode 工作目录
+.omo/
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+*.log
+
+lol-record-analysis-tauri/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+target/ (如果是在根目录混合构建，通常由下面 Maven 部分处理)
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# --- 日志与临时文件 ---
+*.log
+logs/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ==========================================
+# 后端：Java / Maven / Spring Boot
+# ==========================================
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle (如果后端使用 Gradle)
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Java 编译产物
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# Spring Boot
+*.pid
+spring-boot-devtools.properties
+
+# Kotlin (如果混用)
+*.kt.bak
+*.kotlin_module
+
+# ==========================================
+# 前端：Vue.js (Node.js)
+# ==========================================
+
+# 依赖目录 (最重要)
+node_modules/
+.wrangler/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 构建输出目录 (通常在 dist 或 build)
+dist/
+build/
+site/
+coverage/
+
+# 打包/编译用的本地临时目录（见 build.bat：避开受限的系统 %TEMP%）
+.tmp-build/
+.build-tmp/
+
+# 本地环境配置 (包含敏感信息，如 API 密钥)
+.env
+.env.local
+.env.*.local
+*.local
+
+# 编辑器缓存
+*.sfc.lock
+
+# TypeScript (如果使用 TS)
+*.tsbuildinfo
+eslintcache
+
+# 测试覆盖率
+coverage/
+
+# ==========================================
+# 数据库与敏感数据 (可选但推荐)
+# ==========================================
+
+# 本地数据库文件 (SQLite, H2 等)
+*.db
+*.sql
+!rankpeek-server/src/main/resources/db/migration/*.sql
+!rankpeek-cloudflare/migrations/*.sql
+*.sqlite
+*.h2.db
+*.trace.db
+
+# 本地设计稿 / 截图工作区（不是产品内容，体积也大）
+.shots/
+
+# 运维用的本机配置（服务器地址等）：永远不进仓库
+.ops/
+
+# Cloudflare API token 之类的临时凭据：永远不进仓库
+rankpeek-cf-token.txt
+*.cf-token
+
+# 自建服务端地址：真实地址只存在于本地 / 官方构建里，绝不进仓库
+rankpeek-backend/src/main/resources/endpoints.properties
+
+# 密钥文件
+*.pem
+*.key
+keystore.jks
+truststore.jks
+
+# Docker (如果需要忽略本地构建镜像或特定配置)
+# .dockerignore 通常单独存在，但有时也会在这里忽略
+docker-compose.override.yml
+
+# Cloudflare Worker 构建产物
+rankpeek-cloudflare/*.exe
+rankpeek-cloudflare/package-lock.json
+
+.pi/memory/
+# Python 缓存
+__pycache__/
+*.pyc
+
+# OCR 校准用的真实游戏截图：第三方资源（aramgg_client 未声明 LICENSE），
+# 不入库，需要时跑 node scripts/devtools/fetch-ocr-fixtures.mjs 下载
+rankpeek-frontend/tests/fixtures/augment-ocr/
+docs/fixtures/
+
+# 提交信息临时文件
+.git-commit-msg.txt
+
+# 打好的安装包（体积太大，不进仓库，只在本地留档）
+release-archive/

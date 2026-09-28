@@ -1,0 +1,10 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+logging:
+  level:
+    root: INFO
+    io.rankpeek: DEBUG
+    org.java_websocket: DEBUG

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "coach_summary_report.v1",
+  "analysisType": "coach_summary",
+  "inputHash": "9f4c2a10",
+  "title": "最近 20 局排位电子教练报告",
+  "summary": "样例展示服务端期望接收的 AI JSON 结构。具体数值、结论和引用应来自 coach_summary snapshot。",
+  "verdict": {
+    "label": "对线优势可转化率偏低",
+    "score": 72,
+    "confidence": "medium",
+    "summary": "样例结论基于对线经济差、死亡时间线和资源事件引用，实际报告必须引用输入 snapshot 中存在的数据。"
+  },
+  "keyFindings": [
+    {
+      "id": "finding-laning-001",
+      "priority": "high",
+      "category": "laning",
+      "claim": "中路样本里 10 分钟经济差常为正，但 15 分钟后团队资源收益不稳定。",
+      "evidence": "引用 match:m-001 的 laneDiff 和 objective events；不要在报告里编造客户端没有的数据序列。",
+      "reasoning": "如果对线期领先没有进入第一轮龙先锋争夺，领先会更容易停留在个人经济而不是地图收益。",
+      "advice": "下一组排位优先在推线后提前 20 秒移动到资源侧，并记录是否参与第一条小龙或先锋前置视野。",
+      "confidence": "medium",
+      "evidenceRefs": [
+        "sample.queues",
+        "match:m-001.laneDiff",
+        "match:m-001.events.objectives"
+      ]
+    }
+  ],
+  "trainingPlan": [
+    {
+      "focus": "资源前 30 秒站位",
+      "why": "样例训练项用于说明字段结构，真实报告应由 snapshot 的死亡和资源事件支撑。",
+      "nextGames": 5,
+      "task": "每局在小龙或先锋刷新前 30 秒完成一次推线或协助布控，并避免单人脸探。",
+      "metricToTrack": "objective_deaths_before_120s",
+      "target": "5 局内资源前 120 秒内死亡不超过 1 次",
+      "priority": "high"
+    }
+  ],
+  "championAdvice": [
+    {
+      "championName": "Ahri",
+      "role": "MIDDLE",
+      "recommendation": "keep",
+      "reason": "样例建议保留英雄名和位置，真实置信度应受样本量与 dataQuality 影响。",
+      "confidence": "medium"
+    }
+  ],
+  "chartBlocks": [
+    {
+      "id": "chart-gold-curve",
+      "type": "gold_curve",
+      "title": "对线与团队经济曲线",
+      "description": "客户端从 snapshot 的 economyTimeline 中读取真实曲线数据。",
+      "dataRef": "matches[*].economyTimeline",
+      "highlight": "标出 10/15/20 分钟对线经济差变化。"
+    },
+    {
+      "id": "chart-objective-deaths",
+      "type": "objective_deaths",
+      "title": "资源前死亡分布",
+      "description": "客户端从死亡事件的 nearestUpcomingObjective 字段生成图表。",
+      "dataRef": "matches[*].events.deaths.nearestUpcomingObjective",
+      "highlight": "只展示 snapshot 中已有的死亡与资源关联。"
+    }
+  ],
+  "warnings": [
+    {
+      "type": "data_quality",
+      "message": "这是结构示例。真实报告需要根据 snapshot.dataQuality 降低或提高结论置信度。"
+    }
+  ],
+  "metadata": {
+    "modelName": "deepseek-v4-pro-web-manual-placeholder",
+    "promptVersion": "coach_summary.prompt.v1",
+    "generatedAt": "2026-05-11T00:00:00Z",
+    "snapshotSchemaVersion": "coach_summary.v1",
+    "dataQualityConfidence": "medium"
+  }
+}

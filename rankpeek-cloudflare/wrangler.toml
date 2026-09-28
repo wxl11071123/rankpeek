@@ -1,0 +1,28 @@
+name = "rankpeek-api"
+main = "src/index.mjs"
+compatibility_date = "2026-06-02"
+workers_dev = true
+
+[vars]
+FEEDBACK_FROM_EMAIL = "notify@rankpeek.cn"
+FEEDBACK_RECIPIENT_EMAIL = "you@example.com"
+# 海斗匿名数据上传的自建服务端（密钥走 wrangler secret put HEXTECH_PROXY_SECRET）
+# Cloudflare Worker 不允许 fetch 裸 IP 字面量（会返回 error 1003），用 nip.io 的域名形式指向同一台机器
+HEXTECH_INGEST_URL = "https://your-ingest-host"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rankpeek-api"
+database_id = "4e8b9733-9670-4651-8c61-dde1dfcc7c46"
+
+[[send_email]]
+name = "EMAIL"
+destination_address = "you@example.com"
+
+[[r2_buckets]]
+binding = "DOWNLOADS"
+bucket_name = "rankpeek"
+
+[[routes]]
+pattern = "api.rankpeek.cn"
+custom_domain = true

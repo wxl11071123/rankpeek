@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  address: 127.0.0.1
+  shutdown: graceful
+
+spring:
+  application:
+    name: rankpeek-backend
+
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+  threads:
+    virtual:
+      enabled: true
+
+  lifecycle:
+    timeout-per-shutdown-phase: 5s
+
+app:
+  settings:
+    match:
+      default-queue-mode: 0
+rankpeek:
+  hextech:
+    # 自建服务端地址**不写进仓库**：见 io.rankpeek.hextech.HextechEndpoints。
+    # 官方构建把真实地址放进 resources/endpoints.properties（不入库，见 .gitignore）；
+    # 拿不到该文件时自建数据 / 数据包 / 上传整块关闭，其余功能照常可用。
+    # 临时覆盖用环境变量（RANKPEEK_HEXTECH_INGEST_URL 等）或直接改这里的 Spring 配置。
+logging:
+  level:
+    root: INFO
+    io.rankpeek: DEBUG
+    org.java_websocket: WARN
+  pattern:
+    console: "[%d{HH:mm:ss.SSS}] [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/rankpeek.log

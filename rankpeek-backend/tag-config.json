@@ -1,0 +1,173 @@
+[ {
+  "id" : "default_streak_win",
+  "name" : "{N}连胜",
+  "desc" : "最近状态很热，连续赢了好几把。",
+  "good" : true,
+  "enabled" : true,
+  "isDefault" : true,
+  "condition" : {
+    "type" : "history",
+    "filters" : [ {
+      "type" : "queue",
+      "ids" : [ 420, 440, 1700, 2400 ]
+    } ],
+    "refresh" : {
+      "type" : "streak",
+      "min" : 3,
+      "kind" : "WIN"
+    }
+  }
+}, {
+  "id" : "default_streak_loss",
+  "name" : "{N}连败",
+  "desc" : "最近状态很裂，连着输。",
+  "good" : false,
+  "enabled" : true,
+  "isDefault" : true,
+  "condition" : {
+    "type" : "history",
+    "filters" : [ {
+      "type" : "queue",
+      "ids" : [ 420, 440, 1700, 2400 ]
+    } ],
+    "refresh" : {
+      "type" : "streak",
+      "min" : 3,
+      "kind" : "LOSS"
+    }
+  }
+}, {
+  "id" : "default_high_win_rate",
+  "name" : "高胜率",
+  "desc" : "最近这人赢得多，状态肉眼可见地在线。",
+  "good" : true,
+  "enabled" : true,
+  "isDefault" : true,
+  "condition" : {
+    "type" : "history",
+    "filters" : [ {
+      "type" : "queue",
+      "ids" : [ 420, 440, 1700, 2400 ]
+    } ],
+    "refresh" : {
+      "type" : "average",
+      "metric" : "win",
+      "op" : "GTE",
+      "value" : 0.6
+    }
+  }
+}, {
+  "id" : "default_slump",
+  "name" : "低迷",
+  "desc" : "最近赢少输多，手感和节奏都不太对。",
+  "good" : false,
+  "enabled" : true,
+  "isDefault" : true,
+  "condition" : {
+    "type" : "history",
+    "filters" : [ {
+      "type" : "queue",
+      "ids" : [ 420, 440, 1700, 2400 ]
+    } ],
+    "refresh" : {
+      "type" : "average",
+      "metric" : "win",
+      "op" : "LT",
+      "value" : 0.4
+    }
+  }
+}, {
+  "id" : "default_stable_carry",
+  "name" : "稳定C",
+  "desc" : "最近 KDA 很稳，基本都有核心输出味道。",
+  "good" : true,
+  "enabled" : true,
+  "isDefault" : true,
+  "condition" : {
+    "type" : "history",
+    "filters" : [ {
+      "type" : "queue",
+      "ids" : [ 420, 440, 1700, 2400 ]
+    } ],
+    "refresh" : {
+      "type" : "average",
+      "metric" : "kda",
+      "op" : "GTE",
+      "value" : 4.0
+    }
+  }
+}, {
+  "id" : "default_high_damage",
+  "name" : "高伤",
+  "desc" : "最近几把输出量都不低，伤害是真能打。",
+  "good" : true,
+  "enabled" : true,
+  "isDefault" : true,
+  "condition" : {
+    "type" : "history",
+    "filters" : [ {
+      "type" : "queue",
+      "ids" : [ 420, 440, 1700, 2400 ]
+    }, {
+      "type" : "stat",
+      "metric" : "damage",
+      "op" : "GTE",
+      "value" : 25000.0
+    } ],
+    "refresh" : {
+      "type" : "count",
+      "op" : "GTE",
+      "value" : 4.0
+    }
+  }
+}, {
+  "id" : "default_casual",
+  "name" : "娱乐",
+  "desc" : "最近主要在玩娱乐模式，排位样本不算多。",
+  "good" : null,
+  "enabled" : true,
+  "isDefault" : true,
+  "condition" : {
+    "type" : "and",
+    "conditions" : [ {
+      "type" : "not",
+      "condition" : {
+        "type" : "currentQueue",
+        "ids" : [ 430, 450, 900, 1700, 1900, 2000, 2400 ]
+      }
+    }, {
+      "type" : "history",
+      "filters" : [ {
+        "type" : "queue",
+        "ids" : [ 430, 450, 900, 1700, 1900, 2000, 2400 ]
+      } ],
+      "refresh" : {
+        "type" : "count",
+        "op" : "GT",
+        "value" : 10.0
+      }
+    } ]
+  }
+}, {
+  "id" : "default_smolder",
+  "name" : "小火龙",
+  "desc" : "最近小火龙拿得多，英雄池信息很直接。",
+  "good" : null,
+  "enabled" : true,
+  "isDefault" : true,
+  "condition" : {
+    "type" : "history",
+    "filters" : [ {
+      "type" : "queue",
+      "ids" : [ 420, 440, 1700, 2400 ]
+    }, {
+      "type" : "champion",
+      "ids" : [ 901 ]
+    } ],
+    "refresh" : {
+      "type" : "count",
+      "op" : "GTE",
+      "value" : 4.0
+    }
+  }
+} ]

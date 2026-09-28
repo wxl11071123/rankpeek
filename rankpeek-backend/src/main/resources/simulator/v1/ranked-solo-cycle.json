@@ -1,0 +1,1589 @@
+{
+  "schemaVersion": "simulator-fixture-v1",
+  "description": "Two-round ranked solo simulator cycle for RankPeek lifecycle tests.",
+  "rounds": [
+    {
+      "roundId": "sim-round-1",
+      "matchId": "SIM-MATCH-0001",
+      "queueId": 420,
+      "queueType": "RANKED_SOLO_5x5",
+      "typeCn": "单双排位",
+      "currentSummoner": {
+        "puuid": "sim-puuid-current",
+        "gameName": "SimScout",
+        "tagLine": "RP1",
+        "displayName": "SimScout#RP1",
+        "summonerId": 9000001,
+        "profileIconId": 29,
+        "championId": 99,
+        "championKey": "champion_99",
+        "team": "teamOne",
+        "rank": {
+          "queueType": "RANKED_SOLO_5x5",
+          "tier": "EMERALD",
+          "division": "II",
+          "leaguePoints": 64,
+          "wins": 86,
+          "losses": 74
+        },
+        "userTag": {
+          "recordStatus": "OK",
+          "tags": ["稳健发育", "中期参团"],
+          "recentData": {
+            "selectWins": 12,
+            "selectLosses": 8,
+            "kda": 3.1
+          }
+        },
+        "recentMatches": [
+          {
+            "matchId": "SIM-RECENT-CURRENT-1",
+            "championId": 99,
+            "win": true,
+            "kills": 8,
+            "deaths": 3,
+            "assists": 11,
+            "queueId": 420,
+            "gameCreation": 1778050000000,
+            "endedAt": 1778051800000
+          }
+        ]
+      },
+      "lobby": {
+        "queueId": 420,
+        "queueType": "RANKED_SOLO_5x5",
+        "typeCn": "单双排位",
+        "members": [
+          {
+            "puuid": "sim-puuid-current",
+            "gameName": "SimScout",
+            "tagLine": "RP1",
+            "displayName": "SimScout#RP1",
+            "summonerId": 9000001,
+            "profileIconId": 29,
+            "championId": 99,
+            "championKey": "champion_99",
+            "team": "teamOne",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "II",
+              "leaguePoints": 64,
+              "wins": 86,
+              "losses": 74
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["稳健发育"],
+              "recentData": {
+                "selectWins": 12,
+                "selectLosses": 8
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-CURRENT-1",
+                "championId": 99,
+                "win": true,
+                "kills": 8,
+                "deaths": 3,
+                "assists": 11,
+                "queueId": 420,
+                "gameCreation": 1778050000000,
+                "endedAt": 1778051800000
+              }
+            ]
+          },
+          {
+            "puuid": "sim-puuid-r1-ally-jungle",
+            "gameName": "PathBot",
+            "tagLine": "RP1",
+            "displayName": "PathBot#RP1",
+            "summonerId": 9000102,
+            "profileIconId": 7,
+            "championId": 64,
+            "championKey": "champion_64",
+            "team": "teamOne",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "I",
+              "leaguePoints": 21,
+              "wins": 93,
+              "losses": 88
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["节奏型打野"],
+              "recentData": {
+                "selectWins": 11,
+                "selectLosses": 9,
+                "kda": 2.8
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-R1-JG-1",
+                "championId": 64,
+                "win": false,
+                "kills": 5,
+                "deaths": 6,
+                "assists": 9,
+                "queueId": 420,
+                "gameCreation": 1778046400000,
+                "endedAt": 1778048200000
+              }
+            ]
+          }
+        ]
+      },
+      "teammates": [
+        {
+          "puuid": "sim-puuid-current",
+          "gameName": "SimScout",
+          "tagLine": "RP1",
+          "displayName": "SimScout#RP1",
+          "summonerId": 9000001,
+          "profileIconId": 29,
+          "championId": 99,
+          "championKey": "champion_99",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "II",
+            "leaguePoints": 64,
+            "wins": 86,
+            "losses": 74
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["稳健发育", "中期参团"],
+            "recentData": {
+              "selectWins": 12,
+              "selectLosses": 8,
+              "kda": 3.1
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-CURRENT-1",
+              "championId": 99,
+              "win": true,
+              "kills": 8,
+              "deaths": 3,
+              "assists": 11,
+              "queueId": 420,
+              "gameCreation": 1778050000000,
+              "endedAt": 1778051800000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r1-ally-top",
+          "gameName": "TopForge",
+          "tagLine": "RP1",
+          "displayName": "TopForge#RP1",
+          "summonerId": 9000101,
+          "profileIconId": 588,
+          "championId": 266,
+          "championKey": "champion_266",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "DIAMOND",
+            "division": "IV",
+            "leaguePoints": 12,
+            "wins": 104,
+            "losses": 98
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["单带偏好"],
+            "recentData": {
+              "selectWins": 10,
+              "selectLosses": 10,
+              "kda": 2.0
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R1-TOP-1",
+              "championId": 266,
+              "win": true,
+              "kills": 4,
+              "deaths": 5,
+              "assists": 6,
+              "queueId": 420,
+              "gameCreation": 1778042800000,
+              "endedAt": 1778044700000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r1-ally-jungle",
+          "gameName": "PathBot",
+          "tagLine": "RP1",
+          "displayName": "PathBot#RP1",
+          "summonerId": 9000102,
+          "profileIconId": 7,
+          "championId": 64,
+          "championKey": "champion_64",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "I",
+            "leaguePoints": 21,
+            "wins": 93,
+            "losses": 88
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["节奏型打野"],
+            "recentData": {
+              "selectWins": 11,
+              "selectLosses": 9,
+              "kda": 2.8
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R1-JG-1",
+              "championId": 64,
+              "win": false,
+              "kills": 5,
+              "deaths": 6,
+              "assists": 9,
+              "queueId": 420,
+              "gameCreation": 1778046400000,
+              "endedAt": 1778048200000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r1-ally-adc",
+          "gameName": "LaneSpark",
+          "tagLine": "RP1",
+          "displayName": "LaneSpark#RP1",
+          "summonerId": 9000103,
+          "profileIconId": 21,
+          "championId": 145,
+          "championKey": "champion_145",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "III",
+            "leaguePoints": 77,
+            "wins": 79,
+            "losses": 69
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["后期输出"],
+            "recentData": {
+              "selectWins": 13,
+              "selectLosses": 7,
+              "kda": 3.6
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R1-ADC-1",
+              "championId": 145,
+              "win": true,
+              "kills": 11,
+              "deaths": 4,
+              "assists": 7,
+              "queueId": 420,
+              "gameCreation": 1778039200000,
+              "endedAt": 1778041000000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r1-ally-support",
+          "gameName": "WardLine",
+          "tagLine": "RP1",
+          "displayName": "WardLine#RP1",
+          "summonerId": 9000104,
+          "profileIconId": 40,
+          "championId": 412,
+          "championKey": "champion_412",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "II",
+            "leaguePoints": 48,
+            "wins": 81,
+            "losses": 76
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["游走辅助"],
+            "recentData": {
+              "selectWins": 9,
+              "selectLosses": 11,
+              "kda": 2.9
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R1-SUP-1",
+              "championId": 412,
+              "win": false,
+              "kills": 1,
+              "deaths": 7,
+              "assists": 16,
+              "queueId": 420,
+              "gameCreation": 1778035600000,
+              "endedAt": 1778037400000
+            }
+          ]
+        }
+      ],
+      "championSelect": {
+        "teamOne": [
+          {
+            "puuid": "sim-puuid-current",
+            "gameName": "SimScout",
+            "tagLine": "RP1",
+            "displayName": "SimScout#RP1",
+            "summonerId": 9000001,
+            "profileIconId": 29,
+            "championId": 99,
+            "championKey": "champion_99",
+            "team": "teamOne",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "II",
+              "leaguePoints": 64,
+              "wins": 86,
+              "losses": 74
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["稳健发育"],
+              "recentData": {
+                "selectWins": 12,
+                "selectLosses": 8
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-CURRENT-1",
+                "championId": 99,
+                "win": true,
+                "kills": 8,
+                "deaths": 3,
+                "assists": 11,
+                "queueId": 420,
+                "gameCreation": 1778050000000,
+                "endedAt": 1778051800000
+              }
+            ]
+          },
+          {
+            "puuid": "sim-puuid-r1-ally-jungle",
+            "gameName": "PathBot",
+            "tagLine": "RP1",
+            "displayName": "PathBot#RP1",
+            "summonerId": 9000102,
+            "profileIconId": 7,
+            "championId": 64,
+            "championKey": "champion_64",
+            "team": "teamOne",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "I",
+              "leaguePoints": 21,
+              "wins": 93,
+              "losses": 88
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["节奏型打野"],
+              "recentData": {
+                "selectWins": 11,
+                "selectLosses": 9
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-R1-JG-1",
+                "championId": 64,
+                "win": false,
+                "kills": 5,
+                "deaths": 6,
+                "assists": 9,
+                "queueId": 420,
+                "gameCreation": 1778046400000,
+                "endedAt": 1778048200000
+              }
+            ]
+          }
+        ],
+        "teamTwo": [],
+        "actions": [
+          {
+            "actionId": 1,
+            "type": "ban",
+            "actorPuuid": "sim-puuid-r1-ally-top",
+            "championId": 157,
+            "completed": true
+          },
+          {
+            "actionId": 2,
+            "type": "pick",
+            "actorPuuid": "sim-puuid-current",
+            "championId": 99,
+            "completed": true
+          }
+        ]
+      },
+      "opponents": [
+        {
+          "puuid": "sim-puuid-r1-enemy-top",
+          "gameName": "MirrorTop",
+          "tagLine": "SIM",
+          "displayName": "MirrorTop#SIM",
+          "summonerId": 9000201,
+          "profileIconId": 502,
+          "championId": 24,
+          "championKey": "champion_24",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "DIAMOND",
+            "division": "IV",
+            "leaguePoints": 33,
+            "wins": 112,
+            "losses": 101
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["边线压制"],
+            "recentData": {
+              "selectWins": 14,
+              "selectLosses": 6,
+              "kda": 2.4
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R1-ETOP-1",
+              "championId": 24,
+              "win": true,
+              "kills": 7,
+              "deaths": 5,
+              "assists": 4,
+              "queueId": 420,
+              "gameCreation": 1778032000000,
+              "endedAt": 1778033900000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r1-enemy-jungle",
+          "gameName": "RiverMark",
+          "tagLine": "SIM",
+          "displayName": "RiverMark#SIM",
+          "summonerId": 9000202,
+          "profileIconId": 11,
+          "championId": 121,
+          "championKey": "champion_121",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "I",
+            "leaguePoints": 66,
+            "wins": 97,
+            "losses": 90
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["前期入侵"],
+            "recentData": {
+              "selectWins": 12,
+              "selectLosses": 8,
+              "kda": 3.0
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R1-EJG-1",
+              "championId": 121,
+              "win": false,
+              "kills": 6,
+              "deaths": 7,
+              "assists": 5,
+              "queueId": 420,
+              "gameCreation": 1778028400000,
+              "endedAt": 1778030200000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r1-enemy-mid",
+          "gameName": "WaveFold",
+          "tagLine": "SIM",
+          "displayName": "WaveFold#SIM",
+          "summonerId": 9000203,
+          "profileIconId": 18,
+          "championId": 103,
+          "championKey": "champion_103",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "II",
+            "leaguePoints": 59,
+            "wins": 88,
+            "losses": 83
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["游走中单"],
+            "recentData": {
+              "selectWins": 10,
+              "selectLosses": 10,
+              "kda": 2.7
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R1-EMID-1",
+              "championId": 103,
+              "win": true,
+              "kills": 9,
+              "deaths": 4,
+              "assists": 8,
+              "queueId": 420,
+              "gameCreation": 1778024800000,
+              "endedAt": 1778026600000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r1-enemy-adc",
+          "gameName": "CritQueue",
+          "tagLine": "SIM",
+          "displayName": "CritQueue#SIM",
+          "summonerId": 9000204,
+          "profileIconId": 22,
+          "championId": 222,
+          "championKey": "champion_222",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "III",
+            "leaguePoints": 41,
+            "wins": 76,
+            "losses": 73
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["激进换血"],
+            "recentData": {
+              "selectWins": 8,
+              "selectLosses": 12,
+              "kda": 2.2
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R1-EADC-1",
+              "championId": 222,
+              "win": false,
+              "kills": 5,
+              "deaths": 8,
+              "assists": 6,
+              "queueId": 420,
+              "gameCreation": 1778021200000,
+              "endedAt": 1778023000000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r1-enemy-support",
+          "gameName": "HookMock",
+          "tagLine": "SIM",
+          "displayName": "HookMock#SIM",
+          "summonerId": 9000205,
+          "profileIconId": 53,
+          "championId": 111,
+          "championKey": "champion_111",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "II",
+            "leaguePoints": 37,
+            "wins": 83,
+            "losses": 80
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["开团辅助"],
+            "recentData": {
+              "selectWins": 12,
+              "selectLosses": 8,
+              "kda": 2.6
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R1-ESUP-1",
+              "championId": 111,
+              "win": true,
+              "kills": 2,
+              "deaths": 6,
+              "assists": 17,
+              "queueId": 420,
+              "gameCreation": 1778017600000,
+              "endedAt": 1778019400000
+            }
+          ]
+        }
+      ],
+      "loadingScreen": {
+        "teamOne": [
+          {
+            "puuid": "sim-puuid-current",
+            "gameName": "SimScout",
+            "tagLine": "RP1",
+            "displayName": "SimScout#RP1",
+            "summonerId": 9000001,
+            "profileIconId": 29,
+            "championId": 99,
+            "championKey": "champion_99",
+            "team": "teamOne",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "II",
+              "leaguePoints": 64,
+              "wins": 86,
+              "losses": 74
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["稳健发育"],
+              "recentData": {
+                "selectWins": 12,
+                "selectLosses": 8
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-CURRENT-1",
+                "championId": 99,
+                "win": true,
+                "kills": 8,
+                "deaths": 3,
+                "assists": 11,
+                "queueId": 420,
+                "gameCreation": 1778050000000,
+                "endedAt": 1778051800000
+              }
+            ]
+          }
+        ],
+        "teamTwo": [
+          {
+            "puuid": "sim-puuid-r1-enemy-mid",
+            "gameName": "WaveFold",
+            "tagLine": "SIM",
+            "displayName": "WaveFold#SIM",
+            "summonerId": 9000203,
+            "profileIconId": 18,
+            "championId": 103,
+            "championKey": "champion_103",
+            "team": "teamTwo",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "II",
+              "leaguePoints": 59,
+              "wins": 88,
+              "losses": 83
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["游走中单"],
+              "recentData": {
+                "selectWins": 10,
+                "selectLosses": 10
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-R1-EMID-1",
+                "championId": 103,
+                "win": true,
+                "kills": 9,
+                "deaths": 4,
+                "assists": 8,
+                "queueId": 420,
+                "gameCreation": 1778024800000,
+                "endedAt": 1778026600000
+              }
+            ]
+          }
+        ],
+        "championSelections": [
+          {
+            "puuid": "sim-puuid-current",
+            "championId": 99,
+            "team": "teamOne"
+          },
+          {
+            "puuid": "sim-puuid-r1-enemy-mid",
+            "championId": 103,
+            "team": "teamTwo"
+          }
+        ]
+      },
+      "endOfGame": {
+        "matchId": "SIM-MATCH-0001",
+        "win": true,
+        "gameCreation": 1778053600000,
+        "endedAt": 1778055520000,
+        "gameDurationSeconds": 1920,
+        "matchSummary": {
+          "matchId": "SIM-MATCH-0001",
+          "queueId": 420,
+          "win": true,
+          "gameCreation": 1778053600000,
+          "endedAt": 1778055520000,
+          "gameDurationSeconds": 1920,
+          "participants": [
+            {
+              "puuid": "sim-puuid-current",
+              "team": "teamOne",
+              "championId": 99,
+              "win": true,
+              "kills": 9,
+              "deaths": 2,
+              "assists": 14
+            },
+            {
+              "puuid": "sim-puuid-r1-enemy-mid",
+              "team": "teamTwo",
+              "championId": 103,
+              "win": false,
+              "kills": 6,
+              "deaths": 7,
+              "assists": 8
+            }
+          ]
+        }
+      },
+      "matchSummary": {
+        "matchId": "SIM-MATCH-0001",
+        "queueId": 420,
+        "win": true,
+        "gameCreation": 1778053600000,
+        "endedAt": 1778055520000,
+        "gameDurationSeconds": 1920,
+        "participants": [
+          {
+            "puuid": "sim-puuid-current",
+            "team": "teamOne",
+            "championId": 99,
+            "win": true,
+            "kills": 9,
+            "deaths": 2,
+            "assists": 14
+          },
+          {
+            "puuid": "sim-puuid-r1-enemy-mid",
+            "team": "teamTwo",
+            "championId": 103,
+            "win": false,
+            "kills": 6,
+            "deaths": 7,
+            "assists": 8
+          }
+        ]
+      }
+    },
+    {
+      "roundId": "sim-round-2",
+      "matchId": "SIM-MATCH-0002",
+      "queueId": 420,
+      "queueType": "RANKED_SOLO_5x5",
+      "typeCn": "单双排位",
+      "currentSummoner": {
+        "puuid": "sim-puuid-current",
+        "gameName": "SimScout",
+        "tagLine": "RP1",
+        "displayName": "SimScout#RP1",
+        "summonerId": 9000001,
+        "profileIconId": 29,
+        "championId": 103,
+        "championKey": "champion_103",
+        "team": "teamOne",
+        "rank": {
+          "queueType": "RANKED_SOLO_5x5",
+          "tier": "EMERALD",
+          "division": "II",
+          "leaguePoints": 66,
+          "wins": 87,
+          "losses": 74
+        },
+        "userTag": {
+          "recordStatus": "OK",
+          "tags": ["游走支援", "小规模团"],
+          "recentData": {
+            "selectWins": 13,
+            "selectLosses": 8,
+            "kda": 3.3
+          }
+        },
+        "recentMatches": [
+          {
+            "matchId": "SIM-RECENT-CURRENT-2",
+            "championId": 103,
+            "win": false,
+            "kills": 4,
+            "deaths": 6,
+            "assists": 9,
+            "queueId": 420,
+            "gameCreation": 1778060000000,
+            "endedAt": 1778061740000
+          }
+        ]
+      },
+      "lobby": {
+        "queueId": 420,
+        "queueType": "RANKED_SOLO_5x5",
+        "typeCn": "单双排位",
+        "members": [
+          {
+            "puuid": "sim-puuid-current",
+            "gameName": "SimScout",
+            "tagLine": "RP1",
+            "displayName": "SimScout#RP1",
+            "summonerId": 9000001,
+            "profileIconId": 29,
+            "championId": 103,
+            "championKey": "champion_103",
+            "team": "teamOne",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "II",
+              "leaguePoints": 66,
+              "wins": 87,
+              "losses": 74
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["游走支援"],
+              "recentData": {
+                "selectWins": 13,
+                "selectLosses": 8
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-CURRENT-2",
+                "championId": 103,
+                "win": false,
+                "kills": 4,
+                "deaths": 6,
+                "assists": 9,
+                "queueId": 420,
+                "gameCreation": 1778060000000,
+                "endedAt": 1778061740000
+              }
+            ]
+          }
+        ]
+      },
+      "teammates": [
+        {
+          "puuid": "sim-puuid-current",
+          "gameName": "SimScout",
+          "tagLine": "RP1",
+          "displayName": "SimScout#RP1",
+          "summonerId": 9000001,
+          "profileIconId": 29,
+          "championId": 103,
+          "championKey": "champion_103",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "II",
+            "leaguePoints": 66,
+            "wins": 87,
+            "losses": 74
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["游走支援", "小规模团"],
+            "recentData": {
+              "selectWins": 13,
+              "selectLosses": 8,
+              "kda": 3.3
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-CURRENT-2",
+              "championId": 103,
+              "win": false,
+              "kills": 4,
+              "deaths": 6,
+              "assists": 9,
+              "queueId": 420,
+              "gameCreation": 1778060000000,
+              "endedAt": 1778061740000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r2-ally-top",
+          "gameName": "StonePlan",
+          "tagLine": "RP2",
+          "displayName": "StonePlan#RP2",
+          "summonerId": 9001101,
+          "profileIconId": 54,
+          "championId": 54,
+          "championKey": "champion_54",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "I",
+            "leaguePoints": 13,
+            "wins": 101,
+            "losses": 99
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["团战前排"],
+            "recentData": {
+              "selectWins": 9,
+              "selectLosses": 11,
+              "kda": 2.1
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R2-TOP-1",
+              "championId": 54,
+              "win": true,
+              "kills": 3,
+              "deaths": 4,
+              "assists": 12,
+              "queueId": 420,
+              "gameCreation": 1778056400000,
+              "endedAt": 1778058200000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r2-ally-jungle",
+          "gameName": "CampOrder",
+          "tagLine": "RP2",
+          "displayName": "CampOrder#RP2",
+          "summonerId": 9001102,
+          "profileIconId": 76,
+          "championId": 76,
+          "championKey": "champion_76",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "II",
+            "leaguePoints": 87,
+            "wins": 84,
+            "losses": 70
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["控图打野"],
+            "recentData": {
+              "selectWins": 15,
+              "selectLosses": 5,
+              "kda": 4.1
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R2-JG-1",
+              "championId": 76,
+              "win": true,
+              "kills": 6,
+              "deaths": 2,
+              "assists": 10,
+              "queueId": 420,
+              "gameCreation": 1778052800000,
+              "endedAt": 1778054600000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r2-ally-adc",
+          "gameName": "FeatherCast",
+          "tagLine": "RP2",
+          "displayName": "FeatherCast#RP2",
+          "summonerId": 9001103,
+          "profileIconId": 498,
+          "championId": 498,
+          "championKey": "champion_498",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "IV",
+            "leaguePoints": 92,
+            "wins": 71,
+            "losses": 67
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["稳定补刀"],
+            "recentData": {
+              "selectWins": 11,
+              "selectLosses": 9,
+              "kda": 2.9
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R2-ADC-1",
+              "championId": 498,
+              "win": false,
+              "kills": 7,
+              "deaths": 6,
+              "assists": 6,
+              "queueId": 420,
+              "gameCreation": 1778049200000,
+              "endedAt": 1778051000000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r2-ally-support",
+          "gameName": "PeelPoint",
+          "tagLine": "RP2",
+          "displayName": "PeelPoint#RP2",
+          "summonerId": 9001104,
+          "profileIconId": 201,
+          "championId": 201,
+          "championKey": "champion_201",
+          "team": "teamOne",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "II",
+            "leaguePoints": 12,
+            "wins": 80,
+            "losses": 82
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["保护型辅助"],
+            "recentData": {
+              "selectWins": 10,
+              "selectLosses": 10,
+              "kda": 3.4
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R2-SUP-1",
+              "championId": 201,
+              "win": true,
+              "kills": 0,
+              "deaths": 3,
+              "assists": 18,
+              "queueId": 420,
+              "gameCreation": 1778045600000,
+              "endedAt": 1778047400000
+            }
+          ]
+        }
+      ],
+      "championSelect": {
+        "teamOne": [
+          {
+            "puuid": "sim-puuid-current",
+            "gameName": "SimScout",
+            "tagLine": "RP1",
+            "displayName": "SimScout#RP1",
+            "summonerId": 9000001,
+            "profileIconId": 29,
+            "championId": 103,
+            "championKey": "champion_103",
+            "team": "teamOne",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "II",
+              "leaguePoints": 66,
+              "wins": 87,
+              "losses": 74
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["游走支援"],
+              "recentData": {
+                "selectWins": 13,
+                "selectLosses": 8
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-CURRENT-2",
+                "championId": 103,
+                "win": false,
+                "kills": 4,
+                "deaths": 6,
+                "assists": 9,
+                "queueId": 420,
+                "gameCreation": 1778060000000,
+                "endedAt": 1778061740000
+              }
+            ]
+          },
+          {
+            "puuid": "sim-puuid-r2-ally-jungle",
+            "gameName": "CampOrder",
+            "tagLine": "RP2",
+            "displayName": "CampOrder#RP2",
+            "summonerId": 9001102,
+            "profileIconId": 76,
+            "championId": 76,
+            "championKey": "champion_76",
+            "team": "teamOne",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "II",
+              "leaguePoints": 87,
+              "wins": 84,
+              "losses": 70
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["控图打野"],
+              "recentData": {
+                "selectWins": 15,
+                "selectLosses": 5
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-R2-JG-1",
+                "championId": 76,
+                "win": true,
+                "kills": 6,
+                "deaths": 2,
+                "assists": 10,
+                "queueId": 420,
+                "gameCreation": 1778052800000,
+                "endedAt": 1778054600000
+              }
+            ]
+          }
+        ],
+        "teamTwo": [],
+        "actions": [
+          {
+            "actionId": 101,
+            "type": "ban",
+            "actorPuuid": "sim-puuid-r2-ally-top",
+            "championId": 157,
+            "completed": true
+          },
+          {
+            "actionId": 102,
+            "type": "pick",
+            "actorPuuid": "sim-puuid-current",
+            "championId": 103,
+            "completed": true
+          }
+        ]
+      },
+      "opponents": [
+        {
+          "puuid": "sim-puuid-r2-enemy-top",
+          "gameName": "SplitTrace",
+          "tagLine": "SIM",
+          "displayName": "SplitTrace#SIM",
+          "summonerId": 9001201,
+          "profileIconId": 58,
+          "championId": 58,
+          "championKey": "champion_58",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "I",
+            "leaguePoints": 79,
+            "wins": 90,
+            "losses": 77
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["强势上路"],
+            "recentData": {
+              "selectWins": 13,
+              "selectLosses": 7,
+              "kda": 2.5
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R2-ETOP-1",
+              "championId": 58,
+              "win": false,
+              "kills": 5,
+              "deaths": 7,
+              "assists": 5,
+              "queueId": 420,
+              "gameCreation": 1778042000000,
+              "endedAt": 1778043800000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r2-enemy-jungle",
+          "gameName": "SeedPath",
+          "tagLine": "SIM",
+          "displayName": "SeedPath#SIM",
+          "summonerId": 9001202,
+          "profileIconId": 427,
+          "championId": 427,
+          "championKey": "champion_427",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "DIAMOND",
+            "division": "IV",
+            "leaguePoints": 8,
+            "wins": 118,
+            "losses": 112
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["反蹲偏好"],
+            "recentData": {
+              "selectWins": 12,
+              "selectLosses": 8,
+              "kda": 3.2
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R2-EJG-1",
+              "championId": 427,
+              "win": true,
+              "kills": 3,
+              "deaths": 4,
+              "assists": 13,
+              "queueId": 420,
+              "gameCreation": 1778038400000,
+              "endedAt": 1778040200000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r2-enemy-mid",
+          "gameName": "OrbLane",
+          "tagLine": "SIM",
+          "displayName": "OrbLane#SIM",
+          "summonerId": 9001203,
+          "profileIconId": 61,
+          "championId": 61,
+          "championKey": "champion_61",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "II",
+            "leaguePoints": 73,
+            "wins": 82,
+            "losses": 76
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["线权控制"],
+            "recentData": {
+              "selectWins": 9,
+              "selectLosses": 11,
+              "kda": 2.4
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R2-EMID-1",
+              "championId": 61,
+              "win": false,
+              "kills": 4,
+              "deaths": 6,
+              "assists": 7,
+              "queueId": 420,
+              "gameCreation": 1778034800000,
+              "endedAt": 1778036600000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r2-enemy-adc",
+          "gameName": "CaliberMock",
+          "tagLine": "SIM",
+          "displayName": "CaliberMock#SIM",
+          "summonerId": 9001204,
+          "profileIconId": 51,
+          "championId": 51,
+          "championKey": "champion_51",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "III",
+            "leaguePoints": 84,
+            "wins": 78,
+            "losses": 74
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["长手压制"],
+            "recentData": {
+              "selectWins": 14,
+              "selectLosses": 6,
+              "kda": 3.0
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R2-EADC-1",
+              "championId": 51,
+              "win": true,
+              "kills": 10,
+              "deaths": 3,
+              "assists": 9,
+              "queueId": 420,
+              "gameCreation": 1778031200000,
+              "endedAt": 1778033000000
+            }
+          ]
+        },
+        {
+          "puuid": "sim-puuid-r2-enemy-support",
+          "gameName": "RootCase",
+          "tagLine": "SIM",
+          "displayName": "RootCase#SIM",
+          "summonerId": 9001205,
+          "profileIconId": 117,
+          "championId": 117,
+          "championKey": "champion_117",
+          "team": "teamTwo",
+          "rank": {
+            "queueType": "RANKED_SOLO_5x5",
+            "tier": "EMERALD",
+            "division": "II",
+            "leaguePoints": 53,
+            "wins": 86,
+            "losses": 82
+          },
+          "userTag": {
+            "recordStatus": "OK",
+            "tags": ["保护反打"],
+            "recentData": {
+              "selectWins": 13,
+              "selectLosses": 7,
+              "kda": 3.8
+            }
+          },
+          "recentMatches": [
+            {
+              "matchId": "SIM-RECENT-R2-ESUP-1",
+              "championId": 117,
+              "win": true,
+              "kills": 1,
+              "deaths": 2,
+              "assists": 20,
+              "queueId": 420,
+              "gameCreation": 1778027600000,
+              "endedAt": 1778029400000
+            }
+          ]
+        }
+      ],
+      "loadingScreen": {
+        "teamOne": [
+          {
+            "puuid": "sim-puuid-current",
+            "gameName": "SimScout",
+            "tagLine": "RP1",
+            "displayName": "SimScout#RP1",
+            "summonerId": 9000001,
+            "profileIconId": 29,
+            "championId": 103,
+            "championKey": "champion_103",
+            "team": "teamOne",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "II",
+              "leaguePoints": 66,
+              "wins": 87,
+              "losses": 74
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["游走支援"],
+              "recentData": {
+                "selectWins": 13,
+                "selectLosses": 8
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-CURRENT-2",
+                "championId": 103,
+                "win": false,
+                "kills": 4,
+                "deaths": 6,
+                "assists": 9,
+                "queueId": 420,
+                "gameCreation": 1778060000000,
+                "endedAt": 1778061740000
+              }
+            ]
+          }
+        ],
+        "teamTwo": [
+          {
+            "puuid": "sim-puuid-r2-enemy-mid",
+            "gameName": "OrbLane",
+            "tagLine": "SIM",
+            "displayName": "OrbLane#SIM",
+            "summonerId": 9001203,
+            "profileIconId": 61,
+            "championId": 61,
+            "championKey": "champion_61",
+            "team": "teamTwo",
+            "rank": {
+              "queueType": "RANKED_SOLO_5x5",
+              "tier": "EMERALD",
+              "division": "II",
+              "leaguePoints": 73,
+              "wins": 82,
+              "losses": 76
+            },
+            "userTag": {
+              "recordStatus": "OK",
+              "tags": ["线权控制"],
+              "recentData": {
+                "selectWins": 9,
+                "selectLosses": 11
+              }
+            },
+            "recentMatches": [
+              {
+                "matchId": "SIM-RECENT-R2-EMID-1",
+                "championId": 61,
+                "win": false,
+                "kills": 4,
+                "deaths": 6,
+                "assists": 7,
+                "queueId": 420,
+                "gameCreation": 1778034800000,
+                "endedAt": 1778036600000
+              }
+            ]
+          }
+        ],
+        "championSelections": [
+          {
+            "puuid": "sim-puuid-current",
+            "championId": 103,
+            "team": "teamOne"
+          },
+          {
+            "puuid": "sim-puuid-r2-enemy-mid",
+            "championId": 61,
+            "team": "teamTwo"
+          }
+        ]
+      },
+      "endOfGame": {
+        "matchId": "SIM-MATCH-0002",
+        "win": false,
+        "gameCreation": 1778063600000,
+        "endedAt": 1778065340000,
+        "gameDurationSeconds": 1740,
+        "matchSummary": {
+          "matchId": "SIM-MATCH-0002",
+          "queueId": 420,
+          "win": false,
+          "gameCreation": 1778063600000,
+          "endedAt": 1778065340000,
+          "gameDurationSeconds": 1740,
+          "participants": [
+            {
+              "puuid": "sim-puuid-current",
+              "team": "teamOne",
+              "championId": 103,
+              "win": false,
+              "kills": 4,
+              "deaths": 6,
+              "assists": 9
+            },
+            {
+              "puuid": "sim-puuid-r2-enemy-mid",
+              "team": "teamTwo",
+              "championId": 61,
+              "win": true,
+              "kills": 8,
+              "deaths": 3,
+              "assists": 10
+            }
+          ]
+        }
+      },
+      "matchSummary": {
+        "matchId": "SIM-MATCH-0002",
+        "queueId": 420,
+        "win": false,
+        "gameCreation": 1778063600000,
+        "endedAt": 1778065340000,
+        "gameDurationSeconds": 1740,
+        "participants": [
+          {
+            "puuid": "sim-puuid-current",
+            "team": "teamOne",
+            "championId": 103,
+            "win": false,
+            "kills": 4,
+            "deaths": 6,
+            "assists": 9
+          },
+          {
+            "puuid": "sim-puuid-r2-enemy-mid",
+            "team": "teamTwo",
+            "championId": 61,
+            "win": true,
+            "kills": 8,
+            "deaths": 3,
+            "assists": 10
+          }
+        ]
+      }
+    }
+  ]
+}
