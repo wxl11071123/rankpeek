@@ -31,6 +31,7 @@ import {
   type SaveLocalAiSettingsRequest
 } from '@/services/localAiProviderClient'
 import { checkRankPeekDataDiagnostics } from '@/services/rankpeekDataClient'
+import { useAppUpdateInstaller } from '@/composables/useAppUpdateInstaller'
 import { clearFrontendTransientCache } from '@/utils/frontendCache'
 import { getDefaultMatchQueueMode, setCachedDefaultMatchQueueMode } from '@/utils/matchPreferences'
 import brandSymbolBlack from '@/assets/branding/rankpeek-symbol-black.png'
@@ -62,8 +63,17 @@ const { locale, t } = useI18n()
 
 // 只作占位：真版本由 app:getVersion 提供（这里曾写死 1.1.0，发了两个版本都没动）
 const appVersion = ref('')
-const checkingUpdate = ref(false)
 const updateCheckResult = ref('')
+// 检查 → 下载 → 安装并重启，全应用共用一份实现（公告中心用的是同一个）
+const {
+  updateInfo: updateAvailable,
+  checking: checkingUpdate,
+  downloadState: updateDownloadState,
+  downloadPercent: updateDownloadPercent,
+  checkUpdate: checkForAppUpdate,
+  download: downloadAppUpdate,
+  install: installAppUpdate
+} = useAppUpdateInstaller()
 const defaultMatchQueueMode = ref(0)
 const matchModeOptions = ref<GameModeOption[]>([])
 const savingMatchSettings = ref(false)
@@ -217,21 +227,15 @@ if (window.electronAPI) {
     })
 }
 
-async function handleCheckUpdate() {
-  if (checkingUpdate.value) return
-  checkingUpdate.value = true
+async function handleCheckUpdate(): Promise<void> {
   updateCheckResult.value = ''
-  try {
-    const info = await window.electronAPI?.checkUpdate?.()
-    if (info && info.version) {
-      updateCheckResult.value = `发现新版本 v${info.version}`
-    } else {
-      updateCheckResult.value = '已是最新版本'
-    }
-  } catch {
+  const outcome = await checkForAppUpdate()
+  if (outcome === 'available') {
+    updateCheckResult.value = `发现新版本 v${updateAvailable.value?.version ?? ''}`
+  } else if (outcome === 'latest') {
+    updateCheckResult.value = '已是最新版本'
+  } else {
     updateCheckResult.value = '检查失败，请稍后再试'
-  } finally {
-    checkingUpdate.value = false
   }
 }
 
@@ -762,10 +766,44 @@ function closeSponsorModal() {
         <h1>{{ t('settings.title') }}</h1>
         <p>{{ t('settings.subtitle') }}</p>
       </div>
-      <!-- 全应用唯一的「检查更新」入口（公告中心那个已经去掉） -->
+      <!-- 全应用唯一的更新入口：检查 → 下载 → 安装并重启，一条路走完 -->
       <div class="page-header-update">
         <span v-if="updateCheckResult" class="update-result">{{ updateCheckResult }}</span>
+
+        <template v-if="updateDownloadState === 'downloading'">
+          <span class="update-progress-text">下载中 {{ updateDownloadPercent }}%</span>
+          <progress class="update-progress" :value="updateDownloadPercent" max="100" />
+        </template>
+
         <button
+          v-else-if="updateDownloadState === 'downloaded'"
+          class="page-header-update-button"
+          type="button"
+          @click="installAppUpdate"
+        >
+          安装并重启
+        </button>
+
+        <button
+          v-else-if="updateDownloadState === 'error'"
+          class="page-header-update-button"
+          type="button"
+          @click="downloadAppUpdate"
+        >
+          下载失败，重试
+        </button>
+
+        <button
+          v-else-if="updateAvailable"
+          class="page-header-update-button"
+          type="button"
+          @click="downloadAppUpdate"
+        >
+          下载更新 v{{ updateAvailable.version }}
+        </button>
+
+        <button
+          v-else
           class="page-header-update-button"
           :disabled="checkingUpdate"
           type="button"
@@ -1474,6 +1512,20 @@ function closeSponsorModal() {
 .page-header-update-button:disabled {
   opacity: 0.6;
   cursor: default;
+}
+
+.update-progress-text {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.update-progress {
+  width: 160px;
+  height: 8px;
+  border: none;
+  border-radius: 999px;
+  overflow: hidden;
 }
 
 .page-header h1 {

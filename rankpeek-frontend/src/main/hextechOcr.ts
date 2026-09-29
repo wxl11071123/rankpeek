@@ -108,7 +108,7 @@ async function fileLooksComplete(path: string, expectedBytes: number): Promise<b
 
 function download(url: string, target: string): Promise<void> {
   return new Promise((resolve, reject) => {
-    const request = httpsGet(url, { headers: { 'User-Agent': 'RankPeek/1.1.2' } }, (response) => {
+    const request = httpsGet(url, { headers: { 'User-Agent': 'RankPeek/1.1.3' } }, (response) => {
       if (response.statusCode && response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
         response.resume()
         // 重定向可能是相对地址，要基于当前 URL 解析

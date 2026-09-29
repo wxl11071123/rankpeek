@@ -22,7 +22,9 @@ test('announcement center fetches active and archived announcements with unread 
 })
 
 test('announcement center only fetches automatically on startup', () => {
-  assert.match(announcementCenterSource, /onMounted\(\(\) => \{[^}]*void loadAnnouncements\(\);[^}]*void checkUpdates\(\)[^}]*\}\)/)
+  // 更新检查现在走 useAppUpdateInstaller 的 checkUpdate（和设置页共用一份实现）
+  assert.match(announcementCenterSource, /onMounted\(\(\) => \{[^}]*void loadAnnouncements\(\);[^}]*void checkUpdate\(\)[^}]*\}\)/)
+  assert.match(announcementCenterSource, /useAppUpdateInstaller\(\)/)
   assert.doesNotMatch(announcementCenterSource, /setInterval/)
   assert.doesNotMatch(announcementCenterSource, /clearInterval/)
 })

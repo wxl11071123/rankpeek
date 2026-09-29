@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { currentLocale } from '@/i18n'
+import { useAppUpdateInstaller } from '@/composables/useAppUpdateInstaller'
 import {
   fetchRankPeekAnnouncementArchive,
   fetchRankPeekAnnouncements,
@@ -18,12 +19,15 @@ const archivedAnnouncements = ref<RankPeekAnnouncement[]>([])
 const isPanelOpen = ref(false)
 const isLoading = ref(false)
 const readRevision = ref(0)
-const updateInfo = ref<{ version: string; url: string } | null>(null)
-const checkingUpdate = ref(false)
-const downloadState = ref<'idle' | 'downloading' | 'downloaded' | 'error'>('idle')
-const downloadPercent = ref(0)
-const installerPath = ref('')
-let cleanupProgress: (() => void) | null = null
+// 更新流程与设置页共用一份实现，别在这里再写一遍
+const {
+  updateInfo,
+  downloadState,
+  downloadPercent,
+  checkUpdate,
+  download: handleDownload,
+  install: handleInstall
+} = useAppUpdateInstaller()
 
 const unreadCount = computed(() =>
   activeAnnouncements.value.filter(a => isAnnouncementUnread(a)).length
@@ -32,7 +36,7 @@ const panelAnnouncements = computed(() =>
   archivedAnnouncements.value.length ? archivedAnnouncements.value : activeAnnouncements.value
 )
 
-onMounted(() => { void loadAnnouncements(); void checkUpdates() })
+onMounted(() => { void loadAnnouncements(); void checkUpdate() })
 
 type AnnouncementBlock = { kind: 'title' | 'heading' | 'item' | 'text'; text: string }
 
@@ -75,7 +79,7 @@ async function openPanel() {
 
 function closePanel() {
   isPanelOpen.value = false
-  if (cleanupProgress) { cleanupProgress(); cleanupProgress = null }
+  // 下载进度监听由 useAppUpdateInstaller 自己收尾：关掉面板不该把正在下的更新掐了
 }
 
 function markAllRead() {
@@ -85,37 +89,6 @@ function markAllRead() {
 
 function isAnnouncementUnread(a: RankPeekAnnouncement): boolean {
   return !isRankPeekAnnouncementRead(a.id) && !isRankPeekAnnouncementDismissed(a.id)
-}
-
-async function checkUpdates() {
-  if (checkingUpdate.value) return
-  checkingUpdate.value = true
-  try {
-    const info = await window.electronAPI?.checkUpdate?.()
-    if (info && info.version) updateInfo.value = info
-  } catch { /* 静默失败 */ }
-  finally { checkingUpdate.value = false }
-}
-
-async function handleDownload() {
-  if (!updateInfo.value?.url) return
-  downloadState.value = 'downloading'
-  downloadPercent.value = 0
-  try {
-    cleanupProgress = window.electronAPI?.onDownloadProgress((p) => {
-      downloadPercent.value = p.percent
-    }) ?? null
-    installerPath.value = await window.electronAPI!.downloadUpdate!(updateInfo.value.url)
-    downloadState.value = 'downloaded'
-  } catch {
-    downloadState.value = 'error'
-  } finally {
-    if (cleanupProgress) { cleanupProgress(); cleanupProgress = null }
-  }
-}
-
-function handleInstall() {
-  if (installerPath.value) window.electronAPI?.installUpdate?.(installerPath.value)
 }
 
 async function loadAnnouncements() {

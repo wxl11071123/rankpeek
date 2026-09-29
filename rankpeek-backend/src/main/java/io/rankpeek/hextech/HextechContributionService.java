@@ -69,7 +69,7 @@ public class HextechContributionService {
     /** 待上传列表的缓存时长：避免每次打开页面都重新拉战绩。 */
     static final long SCAN_CACHE_MILLIS = 5 * 60 * 1000L;
     /** 客户端版本号：上报和 User-Agent 都用它，别在多处写字面量。 */
-    public static final String APP_VERSION = "1.1.2";
+    public static final String APP_VERSION = "1.1.3";
     /** 会话在过期前多久就提前换新的。 */
     static final long SESSION_REFRESH_MARGIN_SECONDS = 300L;
     /** 服务端下发的上传策略；地址同样来自 HextechEndpoints。 */

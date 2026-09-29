@@ -1227,7 +1227,11 @@ async function startBackend(): Promise<void> {
       log('WARN', 'No writable temp dir found for the backend; leaving it to the system default')
     }
 
-    backendProcess = spawn(exePath, backendTmpDir ? [`-Djava.io.tmpdir=${backendTmpDir}`] : [], {
+    // ⚠️ 临时目录只能走环境变量，**不能**写成 -Djava.io.tmpdir=<路径> 命令行参数。
+    // GraalVM 的原生 exe 在 Windows 上用 ANSI 代码页解析 argv：路径里只要有中文就会变乱码
+    // （用户名是中文就必然中招），后端收到的临时目录不存在，Tomcat 建不了 tempDir 直接退出，
+    // 现象是**卡在启动 logo 界面**。环境变量走 UTF-16，没这个问题（已实测对比验证）。
+    backendProcess = spawn(exePath, [], {
       stdio: ['ignore', 'pipe', 'pipe'],
       windowsHide: true,
       env: {

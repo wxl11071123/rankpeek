@@ -161,6 +161,20 @@ test('settings page exposes in-app feedback and attaches recent app logs', () =>
   assert.match(source, /\}, logs\)/)
 })
 
+test('settings page can download and install an update, not just check for one', () => {
+  // 以前这里只有一个「检查更新」：点完最多显示一行版本号，装不了，用户还得自己去官网重下。
+  // 现在和公告中心共用 useAppUpdateInstaller，检查 → 下载 → 安装并重启一条路走完。
+  assert.match(source, /useAppUpdateInstaller\(\)/)
+  assert.match(source, /checkUpdate:\s*checkForAppUpdate/)
+  assert.match(source, /download:\s*downloadAppUpdate/)
+  assert.match(source, /install:\s*installAppUpdate/)
+  assert.match(source, /@click="downloadAppUpdate"/)
+  assert.match(source, /@click="installAppUpdate"/)
+  assert.match(source, /安装并重启/)
+  assert.match(source, /下载中 \{\{ updateDownloadPercent \}\}%/)
+  assert.match(source, /class="update-progress"/)
+})
+
 test('settings page shows compact sponsor codes at the bottom', () => {
   assert.match(source, /import sponsorAlipayQr from '@\/assets\/support\/rankpeek-alipay-qr\.png'/)
   assert.match(source, /import sponsorWechatQr from '@\/assets\/support\/rankpeek-wechat-qr\.png'/)
