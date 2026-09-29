@@ -75,6 +75,15 @@ test('sidebar retires standalone tag analysis and tag config entries', () => {
   assert.match(source, /path: '\/settings', iconSvg: settingsGearIconSvg, labelKey: 'nav\.settings'/)
 })
 
+test('sidebar version label comes from app:getVersion, never a hardcoded literal', () => {
+  const source = readRendererFile('components/layout/Sidebar.vue')
+
+  // 回归：这里曾写死 v1.1.0，1.1.1 / 1.1.2 发出去左下角都还显示 1.1.0
+  assert.doesNotMatch(source, /class="version">\s*v?\d+\.\d+\.\d+/)
+  assert.match(source, /class="version">\{\{ versionLabel \}\}/)
+  assert.match(source, /window\.electronAPI[\s\S]{0,60}getVersion/)
+})
+
 test('sidebar nav items do not show native browser title tooltips', () => {
   const source = readRendererFile('components/layout/Sidebar.vue')
   const navItemBlock = source.match(/<li[\s\S]*?@click="navigateTo\(item\.path\)"[\s\S]*?>/)?.[0] || ''

@@ -15,7 +15,8 @@ onMounted(() => {
 })
 
 async function loadAnnouncements() {
-  let version = '1.1.0'
+  // 只在 app:getVersion 失败时用到；不能写死具体版本号，否则会随版本过期
+  let version = '0.0.0'
   try {
     version = await window.electronAPI?.getVersion?.() ?? version
   } catch {

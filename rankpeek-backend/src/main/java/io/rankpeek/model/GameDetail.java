@@ -41,6 +41,15 @@ public class GameDetail {
     @JsonProperty("gameCreation")
     private Long gameCreation;
 
+    /**
+     * 这一局的客户端版本号（形如 {@code 16.19.820.7193}）。
+     *
+     * <p>实测（2026-09-29）国服 SGP / LCU 返回的对局详情里都没有这个字段，
+     * 留着是为了"哪天有了就能用" —— 不许拿它当必然存在的字段。
+     */
+    @JsonProperty("gameVersion")
+    private String gameVersion;
+
     @JsonProperty("participantIdentities")
     private List<ParticipantIdentity> participantIdentities;
 

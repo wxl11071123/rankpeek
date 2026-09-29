@@ -133,7 +133,7 @@ async function loadAnnouncements() {
 }
 
 async function buildAnnouncementQuery(): Promise<RankPeekAnnouncementQuery> {
-  let version = '1.1.0'
+  let version = '0.0.0' // 只在 app:getVersion 失败时用到，别写死会过期的版本号
   try { version = await window.electronAPI?.getVersion?.() ?? version } catch { /* */ }
   return { version, platform: window.electronAPI?.platform ?? navigator.platform, locale: currentLocale.value, channel: 'stable' }
 }

@@ -60,7 +60,8 @@ interface SponsorOption {
 const themeStore = useThemeStore()
 const { locale, t } = useI18n()
 
-const appVersion = ref('1.1.0')
+// 只作占位：真版本由 app:getVersion 提供（这里曾写死 1.1.0，发了两个版本都没动）
+const appVersion = ref('')
 const checkingUpdate = ref(false)
 const updateCheckResult = ref('')
 const defaultMatchQueueMode = ref(0)
@@ -206,9 +207,14 @@ function toggleAiProviderDeepThinking() {
 }
 
 if (window.electronAPI) {
-  window.electronAPI.getVersion().then(version => {
-    appVersion.value = version
-  })
+  window.electronAPI
+    .getVersion()
+    .then(version => {
+      appVersion.value = version ?? ''
+    })
+    .catch(() => {
+      appVersion.value = ''
+    })
 }
 
 async function handleCheckUpdate() {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { t, type MessageKey } from '@/i18n'
 import { useResizableSidebar } from '@/composables/useResizableSidebar'
@@ -16,6 +16,20 @@ import sidebarLogo from '@/assets/branding/sidebar-logo.png'
 const route = useRoute()
 const router = useRouter()
 const sidebarElement = ref<HTMLElement | null>(null)
+// 版本号必须从 app:getVersion 读：以前这里是写死的 "v1.1.0"，发了两个版本都没跟着动
+const appVersion = ref('')
+const versionLabel = computed(() => (appVersion.value ? 'v' + appVersion.value : ''))
+
+onMounted(() => {
+  void window.electronAPI
+    ?.getVersion?.()
+    .then((version) => {
+      appVersion.value = version ?? ''
+    })
+    .catch(() => {
+      appVersion.value = ''
+    })
+})
 
 const menuItems: Array<{ path: string; iconSvg: string; labelKey: MessageKey }> = [
   { path: '/', iconSvg: homeIconSvg, labelKey: 'nav.home' },
@@ -74,7 +88,7 @@ function navigateTo(path: string) {
     </nav>
 
     <div class="sidebar-footer">
-      <div class="version">v1.1.0</div>
+      <div class="version">{{ versionLabel }}</div>
     </div>
 
     <div

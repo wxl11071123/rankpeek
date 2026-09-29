@@ -69,7 +69,7 @@ public class HextechContributionService {
     /** 待上传列表的缓存时长：避免每次打开页面都重新拉战绩。 */
     static final long SCAN_CACHE_MILLIS = 5 * 60 * 1000L;
     /** 客户端版本号：上报和 User-Agent 都用它，别在多处写字面量。 */
-    public static final String APP_VERSION = "1.1.1";
+    public static final String APP_VERSION = "1.1.2";
     /** 会话在过期前多久就提前换新的。 */
     static final long SESSION_REFRESH_MARGIN_SECONDS = 300L;
     /** 服务端下发的上传策略；地址同样来自 HextechEndpoints。 */
@@ -271,7 +271,7 @@ public class HextechContributionService {
      */
     private int contributedThisPatch(State state) {
         String patch = currentPatch();
-        if (patch == null || patch.isBlank() || "unknown".equals(patch)) {
+        if (patch == null || patch.isBlank()) {
             return 0;
         }
         return (int) state.uploadedGamePatches().values().stream()
@@ -430,7 +430,10 @@ public class HextechContributionService {
             payload.put("installId", state.installId());
             payload.put("day", today);
             payload.put("version", APP_VERSION);
-            payload.put("patch", currentPatch());
+            String patch = currentPatch();
+            if (patch != null) {
+                payload.put("patch", patch);
+            }
             payload.put("mode", "hextech");
             payload.put("os", System.getProperty("os.name", "unknown"));
             HttpResult result = send(url, payload, null);
@@ -671,6 +674,7 @@ public class HextechContributionService {
         }
 
         List<PendingGame> pending = new ArrayList<>();
+        int hextechGames = 0;
         for (MatchHistory match : matches) {
             if (match == null || match.getGameId() == null) {
                 continue;
@@ -682,6 +686,9 @@ public class HextechContributionService {
             if (state.uploadedGameKeys().contains(key)) {
                 continue;
             }
+            // 只统计「还没传过、这次真去组装了」的对局 —— 放在已上传判断之后，
+            // 否则每次「全都传过了」的正常扫描都会误报成"组装失败"
+            hextechGames++;
             GameDetail detail;
             try {
                 detail = matchHistoryService.getGameDetailById(match.getGameId());
@@ -693,6 +700,10 @@ public class HextechContributionService {
             if (game != null) {
                 pending.add(game);
             }
+        }
+        if (pending.isEmpty() && hextechGames > 0) {
+            // 静默失败最要命：以前这里一声不吭，玩家只会觉得"贡献开了却没数据"
+            log.warn("hextech contribution: 有 {} 局待传海斗拉不到对局详情或版本号，本批跳过", hextechGames);
         }
         return pending;
     }
@@ -725,15 +736,30 @@ public class HextechContributionService {
             return null;
         }
 
-        String patch = patchFromGameVersion(match.getGameVersion());
-        return new PendingGame(key, patch == null ? currentPatch() : patch, match.getGameCreation(), players);
+        // patch 的口径必须和服务端聚合用的键一致，否则同一批数据会被拆成两个版本。
+        // 主力来源是服务端下发的 patch；对局自带版本号只在它可用时才用
+        // （实测 SGP / LCU 的战绩摘要和对局详情都不带 gameVersion，基本走不到）。
+        String patch = currentPatch();
+        if (patch == null) {
+            patch = patchFromGameVersion(detail.getGameVersion());
+        }
+        if (patch == null) {
+            patch = patchFromGameVersion(match.getGameVersion());
+        }
+        if (patch == null) {
+            // 认不出这局属于哪个版本：宁可不传，也不往库里塞 "unknown" 这种脏标签
+            return null;
+        }
+        return new PendingGame(key, patch, match.getGameCreation(), players);
     }
 
     /**
-     * 这一局自己的版本号（{@code 16.19.820.7193} -&gt; {@code 16.19}）。
+     * 从游戏版本号推出 patch（{@code 16.19.820.7193} -&gt; {@code 16.19}）。
      *
-     * <p>不能用「客户端当前版本」：玩家可能补传几天前、甚至上个版本打的对局，
-     * 标成当前版本会把旧版本的数据混进新版本里。取不到就返回 null，由调用方兜底。
+     * <p>本来想用它做到"每局标自己的版本"，但实测（2026-09-29）SGP 和 LCU 两边的
+     * 战绩摘要与对局详情都不带 {@code gameVersion}，它几乎永远是 null。
+     * 所以现在退居兜底，主力来源是 {@link #currentPatch()}（服务端口径）。
+     * 取不到返回 null，由调用方决定跳过还是兜底。
      */
     static String patchFromGameVersion(String gameVersion) {
         if (gameVersion == null || gameVersion.isBlank()) {
@@ -751,11 +777,55 @@ public class HextechContributionService {
         }
     }
 
-    private String currentPatch() {
+    /**
+     * 这一批对局该记成哪个 patch。
+     *
+     * <p>先看本机 patch 表（历史遗留，通常为空），再用服务端下发的自建数据快照里的 patch ——
+     * 那是服务端自己聚合用的键，口径天然一致。
+     *
+     * <p><b>拿不到就返回 {@code null}，绝不编一个字符串顶上。</b>服务端用
+     * {@code ^[0-9]{1,3}.[0-9]{1,3}$} 校验 patch；1.1.1 的兜底值是字面量 {@code "unknown"}，
+     * 结果整批上传被 400 拒收，而且重试一万次也不会变（实测某台机器连续 9 次上传全被拒）。
+     */
+    String currentPatch() {
         try {
-            return patchService.findCurrentPatch().map(PatchVersion::patchKey).orElse("unknown");
+            String stored = patchService.findCurrentPatch().map(PatchVersion::patchKey).orElse(null);
+            if (isValidPatch(stored)) {
+                return stored.trim();
+            }
         } catch (Exception e) {
-            return "unknown";
+            // 本机 patch 表是可选的历史遗留：读不到就往下走
+        }
+        String fromServer = serverDataPatch();
+        return isValidPatch(fromServer) ? fromServer.trim() : null;
+    }
+
+    /** patch 的服务端校验规则，两边必须一致 —— 不一致就是整批上传失败。 */
+    static boolean isValidPatch(String patch) {
+        return patch != null && patch.trim().matches("^[0-9]{1,3}\\.[0-9]{1,3}$");
+    }
+
+    /**
+     * 服务端下发的自建数据快照里带的 patch。
+     *
+     * <p>就是 {@code <localDataRoot>/hextech/self-data.json} 里的 {@code matrix.patch}，
+     * 由 {@link HextechSelfDataService} 写入，和服务端聚合自建数据时用的是同一个键。
+     */
+    private String serverDataPatch() {
+        if (localDataPathService == null) {
+            return null;
+        }
+        Path path = localDataPathService.getLocalDataRoot().resolve("hextech").resolve("self-data.json");
+        try {
+            if (!Files.isRegularFile(path)) {
+                return null;
+            }
+            return objectMapper.readTree(Files.readString(path, StandardCharsets.UTF_8))
+                    .path("matrix")
+                    .path("patch")
+                    .asText(null);
+        } catch (Exception e) {
+            return null;
         }
     }
 
