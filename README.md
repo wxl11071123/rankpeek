@@ -21,7 +21,7 @@
 | `rankpeek-server/deploy/` | 部署脚本 |
 | `rankpeek-frontend/public/ocr-models/` | OCR 模型（约 20 MB，第三方转换产物，授权待确认） |
 
-**这不影响「客户端有没有偷偷上传」这件事的审查。** 那只需要看客户端发什么，以及接收端收什么 —— 两者都在这个仓库里。
+**这不影响「客户端有没有偷偷上传」这件事的审查。** 那只需要看客户端发什么、接收端收什么 —— 两者都在这个仓库里。
 
 ## 隐私
 
@@ -59,5 +59,8 @@ build.bat
 ## 许可
 
 MIT，见 [LICENSE](LICENSE)。
+
+本项目最初基于 [dspos/league-insight](https://github.com/dspos/league-insight)（MIT，作者 ekko）的框架起步；
+后端、前端与数据链路此后已大部分重写。原项目的版权声明保留在 [LICENSE](LICENSE) 中。
 
 RankPeek 是非官方工具，与 Riot Games 及腾讯无任何关联。
